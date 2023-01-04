@@ -1,0 +1,71 @@
+.merchantDeposiy1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.atomsicons24walletDeposit {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.learnMore {
+  text-decoration: underline;
+}
+.submit,
+.thisWebsiteUsesCookiesLea {
+  position: relative;
+  display: inline-block;
+}
+.thisWebsiteUsesCookiesLea {
+  letter-spacing: 0.37px;
+  line-height: 30px;
+}
+.submit {
+  flex: 1;
+  line-height: 24px;
+}
+.buttonsmediumsecondary,
+.cookies {
+  border-radius: var(--br-md);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.buttonsmediumsecondary {
+  background-color: var(--grey-700);
+  width: 136px;
+  flex-shrink: 0;
+  padding: var(--padding-3xs) var(--padding-sm);
+  align-items: flex-start;
+  text-align: center;
+  color: var(--white);
+}
+.cookies {
+  position: relative;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.25));
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(40px);
+  border: 1px solid var(--grey-200);
+  width: 100%;
+  padding: 21px var(--padding-xs);
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  font-size: var(--button-primary-size);
+  color: var(--grey-700);
+  font-family: var(--button-primary);
+}
