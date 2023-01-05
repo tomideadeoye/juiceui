@@ -1,12 +1,8 @@
-import React, { useCallback } from "react";
+import React from "react";
 
 import { makeStyles } from "@mui/styles";
-import { useNavigate } from "react-router-dom";
 import Benefits from "../../../components/benefits";
-import { Box, Grid, Stack } from "@mui/material";
-import JuiceAccordion from "../../../components/muiAccordion";
-import ContactButton from "../../../components/contactButton";
-import BragSection2 from "./bragSection2";
+import { Grid, Stack } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -40,15 +36,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BenefitsSection() {
 	const styles = useStyles();
-	const navigate = useNavigate();
-
-	// const onButtonsBigSecondaryContainerClick = useCallback(() => {
-	// 	navigate("/contact-us");
-	// }, [navigate]);
-
-	const onButtonsBigPrimaryLabelContainer1Click = useCallback(() => {
-		navigate("/contact-us");
-	}, [navigate]);
 
 	const benefitsData = [
 		{
@@ -89,23 +76,6 @@ export default function BenefitsSection() {
 		},
 	];
 
-	const accordionData = [
-		{
-			title: "Operating businesses",
-			description:
-				"Juice is a payment platform that enables businesses to send and receive payments globally. We are a licensed payment institution regulated by the Central Bank of Nigeria (CBN).",
-		},
-
-		{
-			title: "Finance Managers",
-			description: "",
-		},
-		{
-			title: "BDCs and IMTOs",
-			description: "",
-		},
-	];
-
 	return (
 		<Stack className={styles.container} spacing={2}>
 			<b className={styles.header} data-scroll-to="benefitsText">
@@ -121,42 +91,6 @@ export default function BenefitsSection() {
 					);
 				})}
 			</Grid>
-
-			<div className={styles.paymentSolutionsForDiverse}>
-				<div className={styles.discoverHowWeHelpSomeOfAParent}>
-					<div className={styles.discoverHowWeHelpSomeOfA}>
-						Discover how we help some of Africa’s leading businesses
-					</div>
-					<b
-						className={styles.paymentSolutionsForDiverse1}
-						data-scroll-to="paymentSolutionsFor"
-					>
-						Payment solutions for diverse use cases
-					</b>
-				</div>
-				<JuiceAccordion data={accordionData} />
-				<Stack className={styles.goodMatchSection}>
-					<Box>Not sure if you’re a good match?</Box>
-					<Box>
-						Want us to take a closer look at your idea and how you can utilize
-						our products? Let’s discuss in detail.
-					</Box>
-					<ContactButton
-						label="Contact us"
-						link="/contact-us"
-						color="primary"
-					/>
-				</Stack>
-				<BragSection2 />
-			</div>
-			<div className={styles.allTheGuidanceYoullNeed}>
-				<div className={styles.bg12} data-scroll-to="bg1" />
-				<img className={styles.imgIcon4} alt="" src="" />
-				<div
-					className={styles.buttonsbigprimarylabel1}
-					onClick={onButtonsBigPrimaryLabelContainer1Click}
-				></div>
-			</div>
 		</Stack>
 	);
 }

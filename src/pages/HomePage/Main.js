@@ -1,4 +1,3 @@
-// import styles from "./Main.module.css";
 import React from "react";
 import HeroSection from "./sections/heroSection";
 import Benefits from "../../components/benefits";
@@ -7,6 +6,8 @@ import { Box, Grid, Stack } from "@mui/material";
 import ChargesSection from "./sections/chargesSection";
 import ImageDataSplit from "./sections/imageDataSplit";
 import BenefitsSection from "./sections/benefits";
+import BragSection2 from "./sections/bragSection2";
+import JuiceAccordion from "../../components/muiAccordion";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -209,6 +210,8 @@ const Main = () => {
 			<ImageDataSplit data={splitDataContent[0]} />
 			<Stack className={styles.acceptProcessPaymentsSection}>
 				<BenefitsSection />
+				<BragSection2 />
+				<JuiceAccordion />
 			</Stack>
 			<ImageDataSplit data={splitDataContent[1]} />{" "}
 		</Stack>

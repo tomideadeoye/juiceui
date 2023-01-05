@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
-import { Box, Button, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
+import ContactButton from "../../../components/contactButton";
 import { Checkrizer } from "./chargesSection";
 
 const useStyles = makeStyles((theme) => ({
@@ -38,7 +39,7 @@ export default function ImageDataSplit({ data }) {
 						return <Checkrizer key={item} content={item} />;
 					})}
 				</Stack>
-				<Button variant="contained" color="primary" size="large" />
+				<ContactButton color="primary" />
 			</Stack>
 			<Box
 				component="img"
