@@ -1,7 +1,7 @@
 import { Box, Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React, { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import ContactButton from "../../../components/contactButton";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -49,18 +49,6 @@ const useStyles = makeStyles((theme) => ({
 		height: 48,
 		width: "70%",
 	},
-	buttonsbigprimarylabelChild: {
-		padding: "15px 50px",
-		borderRadius: "var(--br-md)",
-		backgroundColor: "var(--grey-700)",
-		color: "var(--white)",
-		width: "fit-content",
-		cursor: "pointer",
-
-		"&:hover": {
-			backgroundColor: theme.palette.primary.dark,
-		},
-	},
 	diverseIndustryLeadersTrust: {
 		letterSpacing: 0.37,
 		textTransform: "uppercase",
@@ -68,12 +56,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function HeroSection() {
-	const navigate = useNavigate();
 	const styles = useStyles();
-
-	const contactClick = useCallback(() => {
-		navigate("/contact-us");
-	}, [navigate]);
 
 	return (
 		<Box className={styles.container}>
@@ -86,12 +69,7 @@ export default function HeroSection() {
 					Juice is an ecosystem of services making business cross border payment
 					less complex, more reliable and compliant than ever before.
 				</Box>
-				<Box
-					className={styles.buttonsbigprimarylabelChild}
-					onClick={contactClick}
-				>
-					Contact us
-				</Box>
+				<ContactButton color="primary" link="/contact-us" />
 				<div className={styles.credentials}>
 					<img className={styles.juiceUsers} alt="" src="../group-82.svg" />
 					<Box className={styles.diverseIndustryLeadersTrust} mt={2}>

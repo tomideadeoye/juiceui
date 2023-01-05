@@ -3,8 +3,10 @@ import React, { useCallback } from "react";
 import { makeStyles } from "@mui/styles";
 import { useNavigate } from "react-router-dom";
 import Benefits from "../../../components/benefits";
-import { Grid, Stack } from "@mui/material";
+import { Box, Grid, Stack } from "@mui/material";
 import JuiceAccordion from "../../../components/muiAccordion";
+import ContactButton from "../../../components/contactButton";
+import BragSection2 from "./bragSection2";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -18,6 +20,21 @@ const useStyles = makeStyles((theme) => ({
 		"& > *:nth-child(2)": {
 			fontSize: theme.typography.fontSize,
 		},
+	},
+	goodMatchSection: {
+		background: theme.palette.white.main,
+		width: "100%",
+		gap: theme.spacing(2),
+		padding: theme.spacing(3, 3),
+		margin: theme.spacing(3, 0),
+		borderRadius: theme.borderRadius.md,
+		"& > *:first-child": {
+			fontSize: theme.typography.h5.fontSize,
+		},
+		"& > *:nth-child(2)": {
+			fontSize: theme.typography.fontSize,
+		},
+		alignItems: "start",
 	},
 }));
 
@@ -118,22 +135,19 @@ export default function BenefitsSection() {
 					</b>
 				</div>
 				<JuiceAccordion data={accordionData} />
-				<div className={styles.div5}>
-					<div className={styles.bg5} />
-					<b className={styles.b}>+70</b>
-					<div className={styles.countriesSupportedForUsdPa}>
-						Countries supported for USD payments
-					</div>
-					<b className={styles.b1}>+100</b>
-					<div className={styles.countriesSupportedForLocal}>
-						Countries supported for local payouts
-					</div>
-					<b className={styles.b2}>70%</b>
-					<div className={styles.quickerPayoutTime}>Quicker payout time</div>
-					<div className={styles.allBraggingRightsUnreserved}>
-						all bragging rights unreserved.*
-					</div>
-				</div>
+				<Stack className={styles.goodMatchSection}>
+					<Box>Not sure if you’re a good match?</Box>
+					<Box>
+						Want us to take a closer look at your idea and how you can utilize
+						our products? Let’s discuss in detail.
+					</Box>
+					<ContactButton
+						label="Contact us"
+						link="/contact-us"
+						color="primary"
+					/>
+				</Stack>
+				<BragSection2 />
 			</div>
 			<div className={styles.allTheGuidanceYoullNeed}>
 				<div className={styles.bg12} data-scroll-to="bg1" />

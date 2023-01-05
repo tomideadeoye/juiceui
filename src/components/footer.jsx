@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: "center",
 		padding: theme.spacing(4, 3),
 		background: theme.palette.primary.main,
+		fontFamily: theme.typography.fontFamily,
 	},
 
 	juiceAfricaAllRightsReserParent: {
