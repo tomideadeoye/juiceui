@@ -5,8 +5,6 @@ import {
 	useLocation,
 } from "react-router-dom";
 import Main from "./pages/HomePage/Main";
-import FrameComponent from "./pages/FrameComponent";
-import FrameComponent1 from "./pages/FrameComponent1";
 import Cookies from "./pages/Cookies";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
@@ -17,20 +15,12 @@ import { useEffect } from "react";
 import React from "react";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import { Box } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-
-const useStyles = makeStyles((theme) => ({
-	global: {
-		fontFamily: theme.typography.fontFamily,
-	},
-}));
+// import { Box } from "@mui/material";
 
 function App() {
 	const action = useNavigationType();
 	const location = useLocation();
 	const pathname = location.pathname;
-	const styles = useStyles();
 
 	useEffect(() => {
 		if (action !== "POP") {
@@ -97,14 +87,10 @@ function App() {
 	}, [pathname]);
 
 	return (
-		<Box className={styles.globalContainer}>
+		<>
 			<Header />
 			<Routes>
 				<Route path="/" element={<Main />} />
-
-				<Route path="/frame-299" element={<FrameComponent />} />
-
-				<Route path="/frame-298" element={<FrameComponent1 />} />
 
 				<Route path="/cookies" element={<Cookies />} />
 
@@ -119,7 +105,7 @@ function App() {
 				<Route path="/article" element={<Article />} />
 			</Routes>
 			<Footer />
-		</Box>
+		</>
 	);
 }
 export default App;

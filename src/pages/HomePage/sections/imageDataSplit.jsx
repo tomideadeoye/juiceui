@@ -2,7 +2,7 @@
 import { Box, Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
-import ContactButton from "../../../components/contactButton";
+import ContactButton from "../../../components/juiceButton";
 import { Checkrizer } from "./chargesSection";
 
 const useStyles = makeStyles((theme) => ({
@@ -39,7 +39,7 @@ export default function ImageDataSplit({ data }) {
 						return <Checkrizer key={item} content={item} />;
 					})}
 				</Stack>
-				<ContactButton color="primary" />
+				<ContactButton color="primary" link="/contact-us" />
 			</Stack>
 			<Box
 				component="img"

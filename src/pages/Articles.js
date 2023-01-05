@@ -1,67 +1,13 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import styles from "./Articles.module.css";
+import { makeStyles } from "@mui/styles";
 import React from "react";
 
+const useStyles = makeStyles(() => ({}));
+
 const Articles = () => {
-	const navigate = useNavigate();
-
-	const onGuidanceTextClick = useCallback(() => {
-		const anchor = document.querySelector("[data-scroll-to='bg1']");
-		if (anchor) {
-			anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-		}
-	}, []);
-
-	const onUseCasesTextClick = useCallback(() => {
-		const anchor = document.querySelector(
-			"[data-scroll-to='paymentSolutionsFor']"
-		);
-		if (anchor) {
-			anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-		}
-	}, []);
-
-	const onBenefitsTextClick = useCallback(() => {
-		const anchor = document.querySelector("[data-scroll-to='benefitsText']");
-		if (anchor) {
-			anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-		}
-	}, []);
-
-	const onDocumentationTextClick = useCallback(() => {
-		navigate("/");
-	}, [navigate]);
+	const styles = useStyles();
 
 	return (
 		<div className={styles.articles}>
-			<div className={styles.header}>
-				<img className={styles.headerChild} alt="" src="../group-1344.svg" />
-				<div className={styles.sections}>
-					<div className={styles.guidance} onClick={onGuidanceTextClick}>
-						Guidance
-					</div>
-					<div className={styles.useCases} onClick={onUseCasesTextClick}>
-						Use cases
-					</div>
-					<div className={styles.benefits} onClick={onBenefitsTextClick}>
-						Benefits
-					</div>
-					<div className={styles.documentationWrapper}>
-						<div
-							className={styles.documentation}
-							onClick={onDocumentationTextClick}
-						>
-							Documentation
-						</div>
-					</div>
-				</div>
-				<div className={styles.buttons}>
-					<div className={styles.buttonsmediumsecondary}>
-						<b className={styles.submit}>Contact us</b>
-					</div>
-				</div>
-			</div>
 			<img className={styles.forwardIcon} alt="" src="../forward@2x.png" />
 			<div className={styles.div}>
 				<div className={styles.makingAGeneralInquiryOrY}>

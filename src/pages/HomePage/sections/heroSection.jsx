@@ -1,7 +1,7 @@
 import { Box, Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
-import ContactButton from "../../../components/contactButton";
+import ContactButton from "../../../components/juiceButton";
 
 const useStyles = makeStyles((theme) => ({
 	container: {

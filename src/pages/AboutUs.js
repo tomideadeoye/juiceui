@@ -1,26 +1,38 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./AboutUs.module.css";
 import React from "react";
+import { Grid, Stack, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles(() => ({}));
 
 const AboutUs = () => {
 	const navigate = useNavigate();
+	const styles = useStyles();
 
 	const onButtonsBigPrimaryLabelContainerClick = useCallback(() => {
 		navigate("/contact-us");
 	}, [navigate]);
 
 	return (
-		<div className={styles.aboutUs}>
-			<div className={styles.top}>
-				<div className={styles.forOneYearJuiceHasBeenI}>
-					For one year, Juice has been innovating with payment technology. With
-					every iteration, we move closer to our ultimate goal - to get global
-					payments to the safest, quickest and most inexpensive it can be.
-				</div>
-				<b className={styles.aboutUs1}>About us</b>
-				<img className={styles.imgIcon} alt="" src="../img5@2x.png" />
-			</div>
+		<Stack className={styles.aboutUs}>
+			<Grid container spacing={3}>
+				<Grid item xs={12} sm={6}>
+					<Typography variant="h3" gutterBottom>
+						About us
+					</Typography>
+					<Typography gutterBottom>
+						For one year, Juice has been innovating with payment technology.
+						With every iteration, we move closer to our ultimate goal - to get
+						global payments to the safest, quickest and most inexpensive it can
+						be.
+					</Typography>
+				</Grid>
+				<Grid item xs={12} sm={6}>
+					<img className={styles.imgIcon} alt="" src="../img5@2x.png" />
+				</Grid>
+			</Grid>
+
 			<div className={styles.juiceValues}>
 				<div className={styles.vaule3}>
 					<div className={styles.bg} />
@@ -284,7 +296,7 @@ const AboutUs = () => {
 					className={styles.evenThoughWeMayNotBeLook}
 				>{`Even though we may not be looking for talents and the moment we are open to any inquiries. Reach out to us and convince why we should work toghether. `}</div>
 			</div>
-		</div>
+		</Stack>
 	);
 };
 

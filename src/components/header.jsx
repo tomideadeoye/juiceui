@@ -2,8 +2,8 @@ import { Box, Stack, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import ContactButton from "./contactButton";
 import MUIDrawer from "./drawer";
+import ContactButton from "./juiceButton";
 
 const useStyles = makeStyles((theme) => ({
 	header: {
@@ -17,8 +17,7 @@ const useStyles = makeStyles((theme) => ({
 		backdropFilter: "blur(40px)",
 		alignItems: "center",
 		padding: theme.spacing(1, 1),
-
-		position: "fixed",
+		position: "sticky",
 		top: 0,
 		left: 0,
 		zIndex: 100,
@@ -75,8 +74,9 @@ export default function Header() {
 
 	return (
 		<Box className={styles.header}>
-			<img
+			<Box
 				className={styles.juiceLogo}
+				component="img"
 				alt=""
 				src="../group-134.svg"
 				onClick={useCallback(() => {
@@ -96,7 +96,7 @@ export default function Header() {
 						<div onClick={onUseCasesTextClick}>Use cases</div>
 						<div onClick={onGuidanceTextClick}>Guidance</div>
 					</Stack>
-					<ContactButton />
+					<ContactButton link="/contact-us" />
 				</>
 			)}
 

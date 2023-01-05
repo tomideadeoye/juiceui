@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Stack } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	juiceIconsTransactionIcon: {
-		width: "9%",
+		width: "11%",
 	},
 }));
 
@@ -28,10 +28,13 @@ export default function Benefits({ data }) {
 				alt="juiceIconsTransactionIcon"
 				src={data.icon}
 			/>
-			<b>{data.title}</b>
-			<div className={styles.especiallyValuableForBusine}>
+			<Typography variant="h6" color="text.secondary" fontWeight="bold">
+				{data.title}
+			</Typography>
+
+			<Typography variant="body2" color="text.secondary" lineHeight="32px">
 				{data.description}
-			</div>
+			</Typography>
 		</Stack>
 	);
 }

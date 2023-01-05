@@ -1,9 +1,13 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./ContactUs.module.css";
 import React from "react";
 
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles(() => ({}));
+
 const ContactUs = () => {
+	const styles = useStyles();
 	const navigate = useNavigate();
 
 	const onGuidanceTextClick = useCallback(() => {
