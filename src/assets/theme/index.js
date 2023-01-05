@@ -46,21 +46,20 @@ export default createTheme({
 			500: "#838484",
 			600: "#7c7c7c",
 			700: "#434343",
+			800: "#111",
 		},
 		secondary: {
 			main: "#fac8ab",
 		},
-		grey2: {
-			100: "#f8f8f8",
-			200: "#eee",
-			300: "#d8d8d8",
-			700: "#111",
-		},
+
 		pink: {
 			main: "#d2c3f2",
 		},
 		white: {
 			main: "#fff",
+		},
+		background: {
+			default: "#f8f8f8",
 		},
 	},
 	spacing: ["0px", "24px", "32px", "40px", "80px", "160px", "334px", "600px"],

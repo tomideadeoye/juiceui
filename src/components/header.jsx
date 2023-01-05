@@ -1,8 +1,9 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import ContactButton from "./contactButton";
+import MUIDrawer from "./drawer";
 
 const useStyles = makeStyles((theme) => ({
 	header: {
@@ -16,9 +17,7 @@ const useStyles = makeStyles((theme) => ({
 		backdropFilter: "blur(40px)",
 		alignItems: "center",
 		padding: theme.spacing(1, 1),
-		[theme.breakpoints.down("md")]: {
-			flexDirection: "column",
-		},
+
 		position: "fixed",
 		top: 0,
 		left: 0,
@@ -84,17 +83,27 @@ export default function Header() {
 				}, [navigate])}
 			/>
 
-			<Stack
-				className={styles.sections}
-				direction="row"
-				justifyContent="space-between"
+			{useMediaQuery((theme) => theme.breakpoints.up("sm")) && (
+				<>
+					<Stack
+						className={styles.sections}
+						direction="row"
+						justifyContent="space-between"
+					>
+						<div onClick={onDocumentationTextClick}>Documentation</div>
+						<div onClick={onBenefitsText1Click}>Benefits</div>
+						<div onClick={onUseCasesTextClick}>Use cases</div>
+						<div onClick={onGuidanceTextClick}>Guidance</div>
+					</Stack>
+					<ContactButton />
+				</>
+			)}
+
+			<Box
+			
 			>
-				<div onClick={onDocumentationTextClick}>Documentation</div>
-				<div onClick={onBenefitsText1Click}>Benefits</div>
-				<div onClick={onUseCasesTextClick}>Use cases</div>
-				<div onClick={onGuidanceTextClick}>Guidance</div>
-			</Stack>
-			<ContactButton />
+				<MUIDrawer />
+			</Box>
 		</Box>
 	);
 }

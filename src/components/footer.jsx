@@ -11,27 +11,28 @@ const useStyles = makeStyles((theme) => ({
 		flexDirection: "row",
 		justifyContent: "space-around",
 		alignItems: "center",
-		backgroundColor: "var(--color-pink)",
-		padding: theme.spacing(3, 3),
+		padding: theme.spacing(4, 3),
+		background: theme.palette.primary.main,
 	},
 
 	juiceAfricaAllRightsReserParent: {
-		fontSize: "var(--font-size-xs)",
+		fontSize: theme.typography.pxToRem(14),
 	},
-	juiceAfricaAllRightsReser: {},
+	juiceAfricaAllRightsReser: {
+		"& > *": {
+			margin: theme.spacing(0, 1),
+		},
+	},
 
-	usingJuiceRails: {
-		marginBlockStart: 0,
-		marginBlockEnd: 0,
-	},
-	seeYourTransfers: {
-		margin: 0,
-	},
 	juiceLogo: {
 		cursor: "pointer",
-		borderRadius: "var(--br-sm)",
-		backgroundColor: "var(--grey-700)",
-		padding: "10px 20px",
+		borderRadius: theme.borderRadius.md,
+		backgroundColor: theme.palette.grey[800],
+		padding: theme.spacing(1),
+		margin: theme.spacing(0, 2, 0, 0),
+		"&:hover": {
+			backgroundColor: theme.palette.grey[700],
+		},
 	},
 
 	resourcesParent: {
@@ -74,8 +75,8 @@ export default function Footer() {
 						}, [navigate])}
 					/>
 					<Stack className={styles.juiceAfricaAllRightsReser}>
-						<p className={styles.usingJuiceRails}>©2022 Juice Africa.</p>
-						<p className={styles.seeYourTransfers}>All rights reserved.</p>
+						<p>©2022 Juice Africa.</p>
+						<p>All rights reserved.</p>
 					</Stack>
 				</Stack>
 			</Grid>

@@ -15,13 +15,13 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: "center",
 		justifyContent: "flex-start",
 		gap: "var(--gap-0)",
-		backgroundColor: "var(--grey-100)",
+		backgroundColor: theme.palette.background.default,
 		width: "100%",
 		overflow: "hidden",
 		textAlign: "left",
 		fontSize: "var(--font-size-base)",
-		color: "var(--grey-700)",
-		fontFamily: "var(--button-primary)",
+		color: theme.palette.grey[800],
+		fontFamily: theme.typography.fontFamily,
 	},
 	content: {
 		display: "flex",
@@ -43,23 +43,23 @@ const useStyles = makeStyles((theme) => ({
 
 	acceptProcessPaymentsSection: {
 		padding: theme.spacing(2, 5),
-		// background: "pink",
-		// select the first child of the section
-		"& > *:first-child": {
-			fontSize: "var(--font-size-2xl)",
-			lineHeight: "54px",
-			width: "50%",
-			margin: theme.spacing(0, 0, 2, 0),
-			[theme.breakpoints.down("md")]: {
-				fontSize: "var(--font-size-xl)",
-				lineHeight: "42px",
-				width: "100%",
-			},
+	},
+
+	acceptPaymentsSText: {
+		fontSize: "var(--font-size-2xl)",
+		lineHeight: "54px",
+		width: "50%",
+		margin: theme.spacing(0, 0, 2, 0),
+		[theme.breakpoints.down("md")]: {
+			fontSize: "var(--font-size-xl)",
+			lineHeight: "42px",
+			width: "100%",
 		},
 	},
+
 	speedySettlementsSection: {
-		borderRadius: "var(--br-md)",
-		backgroundColor: "var(--white)",
+		borderRadius: theme.borderRadius.md,
+		backgroundColor: theme.palette.white.main,
 		backdropFilter: "blur(40px)",
 		padding: theme.spacing(2, 2),
 		height: "100%",
@@ -72,8 +72,8 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		backgroundColor: theme.palette.primary.dark,
 		padding: theme.spacing(2, 2, 0, 2),
-		borderRadius: "var(--br-md)",
-		color: "var(--white)",
+		borderRadius: theme.borderRadius.md,
+		color: theme.palette.white.main,
 		lineHeight: "32px",
 	},
 }));
@@ -132,73 +132,82 @@ const Main = () => {
 	];
 
 	return (
-		<Stack className={styles.main}>
-			<HeroSection />
-			<Stack className={styles.acceptProcessPaymentsSection} spacing={2}>
-				<Box>Accept and process payments in a secure and scalable way</Box>
-				<Grid container spacing={2} className={styles.speedySettlementsSection}>
-					<Grid item sm={12} md={6}>
-						<Stack>
-							<b className={styles.speedySettlements}>Speedy settlements</b>
-							<p className={styles.usingJuiceRails}>
-								Legacy payments take up to 4 business days to settle. With
-								Juice’s rapid payment system, payments settle in only a couple
-								of hours. Save time and effort with effective scheme management,
-								and timely settlement.
-							</p>
-						</Stack>
+		<>
+			<Stack className={styles.main}>
+				<HeroSection />
+				<Stack className={styles.acceptProcessPaymentsSection} spacing={2}>
+					<Box className={styles.acceptPaymentsSText}>
+						Accept and process payments in a secure and scalable way
+					</Box>
+					<Grid
+						container
+						spacing={2}
+						className={styles.speedySettlementsSection}
+					>
+						<Grid item sm={12} md={6}>
+							<Stack>
+								<b className={styles.speedySettlements}>Speedy settlements</b>
+								<p className={styles.usingJuiceRails}>
+									Legacy payments take up to 4 business days to settle. With
+									Juice’s rapid payment system, payments settle in only a couple
+									of hours. Save time and effort with effective scheme
+									management, and timely settlement.
+								</p>
+							</Stack>
+						</Grid>
+						<Grid item sm={12} md={6}>
+							<Box
+								sx={{
+									backgroundImage: `url(../img2@2x.png)`,
+									backgroundRepeat: "no-repeat",
+									backgroundSize: "cover",
+									height: "100%",
+									width: "100%",
+								}}
+							/>
+						</Grid>
 					</Grid>
-					<Grid item sm={12} md={6}>
-						<Box
-							sx={{
-								backgroundImage: `url(../img2@2x.png)`,
-								backgroundRepeat: "no-repeat",
-								backgroundSize: "cover",
-								height: "100%",
-								width: "100%",
-							}}
+					{/* YOUR ARE IN CONTROL SECTION */}
+					<Stack className={styles.youAreInControl}>
+						<b className={styles.forForAllPayinAndPayoutT}>You’re in control</b>
+
+						<Grid container spacing={5}>
+							<Grid item sm={12} lg={6}>
+								One robust dashboard to manage all your finance operations
+								within our ecosystem
+							</Grid>
+							<Grid item sm={12} lg={6}>
+								With both top-level and indepth transaction history view on the
+								dashboard, Juice helps finance teams reconcile transactions
+								efficiently and conveniently.
+							</Grid>
+						</Grid>
+
+						<img
+							className={styles.imgIcon1}
+							alt=""
+							src="../img1@2x.png"
+							width="100%"
 						/>
-					</Grid>
-				</Grid>
-				{/* YOUR ARE IN CONTROL SECTION */}
-				<Stack className={styles.youAreInControl}>
-					<b className={styles.forForAllPayinAndPayoutT}>You’re in control</b>
+					</Stack>
 
-					<Grid container spacing={5}>
-						<Grid item sm={12} lg={6}>
-							One robust dashboard to manage all your finance operations within
-							our ecosystem
+					<Grid container spacing={2}>
+						<Grid item sm={12} md={6}>
+							<Benefits data={benefitsArray[0]} />
 						</Grid>
-						<Grid item sm={12} lg={6}>
-							With both top-level and indepth transaction history view on the
-							dashboard, Juice helps finance teams reconcile transactions
-							efficiently and conveniently.
+						<Grid item sm={12} md={6}>
+							<Benefits data={benefitsArray[1]} />
 						</Grid>
 					</Grid>
-
-					<img
-						className={styles.imgIcon1}
-						alt=""
-						src="../img1@2x.png"
-						width="100%"
-					/>
+					<ChargesSection />
 				</Stack>
-
-				<Grid container spacing={2}>
-					<Grid item sm={12} md={6}>
-						<Benefits data={benefitsArray[0]} />
-					</Grid>
-					<Grid item sm={12} md={6}>
-						<Benefits data={benefitsArray[1]} />
-					</Grid>
-				</Grid>
-				<ChargesSection />
-
-				<BenefitsSection />
 			</Stack>
 			<ImageDataSplit data={splitDataContent[0]} />
-			<ImageDataSplit data={splitDataContent[1]} />
-		</Stack>
+			<Stack className={styles.acceptProcessPaymentsSection}>
+				<BenefitsSection />
+			</Stack>
+			<ImageDataSplit data={splitDataContent[1]} />{" "}
+		</>
 	);
 };
 

@@ -6,7 +6,7 @@ import React from "react";
 const useStyles = makeStyles((theme) => ({
 	container: {
 		background: theme.palette.white.main,
-		borderRadius: "var(--br-md)",
+		borderRadius: theme.borderRadius.md,
 		padding: theme.spacing(2, 2),
 
 		"& > *": {

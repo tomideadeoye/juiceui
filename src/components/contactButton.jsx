@@ -1,9 +1,8 @@
 import { Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
-// import styles from "../pages/Main.module.css";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
 	buttons: {
 		textAlign: "center",
 		borderRadius: "var(--br-md)",
@@ -11,6 +10,10 @@ const useStyles = makeStyles(() => ({
 		width: "136px",
 		padding: "var(--padding-3xs) var(--padding-sm)",
 		cursor: "pointer",
+		"&:hover": {
+			backgroundColor: theme.palette.primary.main,
+			color: theme.palette.primary.light,
+		},
 	},
 }));
 

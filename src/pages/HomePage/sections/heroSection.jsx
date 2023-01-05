@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
 	everythingYouNeedForReliab: {
 		fontSize: theme.typography.h1.fontSize,
 		width: "70%",
+		[theme.breakpoints.down("md")]: {
+			fontSize: theme.typography.h4.fontSize,
+		},
 	},
 	juiceIsAnEcosystemOfServi: {
 		letterSpacing: "0.37px",

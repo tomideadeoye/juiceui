@@ -10,22 +10,6 @@ const AboutUs = () => {
 		navigate("/contact-us");
 	}, [navigate]);
 
-	const onGroupContainer4Click = useCallback(() => {
-		navigate("/");
-	}, [navigate]);
-
-	const onArticlesTextClick = useCallback(() => {
-		navigate("/articles");
-	}, [navigate]);
-
-	const onContactUsTextClick = useCallback(() => {
-		navigate("/contact-us");
-	}, [navigate]);
-
-	const onTermsConditionsClick = useCallback(() => {
-		navigate("/terms-conditions");
-	}, [navigate]);
-
 	return (
 		<div className={styles.aboutUs}>
 			<div className={styles.top}>
@@ -299,47 +283,6 @@ const AboutUs = () => {
 				<div
 					className={styles.evenThoughWeMayNotBeLook}
 				>{`Even though we may not be looking for talents and the moment we are open to any inquiries. Reach out to us and convince why we should work toghether. `}</div>
-			</div>
-			<div className={styles.footer}>
-				<div className={styles.footerChild} />
-				<div className={styles.juiceAfricaAllRightsReserParent}>
-					<div className={styles.juiceAfricaAllRightsReser}>
-						<p className={styles.juiceAfrica}>©2022 Juice Africa.</p>
-						<p className={styles.allRightsReserved}>All rights reserved.</p>
-					</div>
-					<div
-						className={styles.rectangleParent}
-						onClick={onGroupContainer4Click}
-					>
-						<div className={styles.groupChild} />
-						<img
-							className={styles.logosjuiceShortIcon}
-							alt=""
-							src="../logosjuiceshort2.svg"
-						/>
-					</div>
-				</div>
-				<div className={styles.resourcesParent}>
-					<b className={styles.resources}>Resources</b>
-					<div className={styles.documentation1}>Documentation</div>
-					<div className={styles.articles} onClick={onArticlesTextClick}>
-						Articles
-					</div>
-				</div>
-				<div className={styles.companyParent}>
-					<b className={styles.resources}>Company</b>
-					<div className={styles.aboutUs2}>About us</div>
-					<div className={styles.articles} onClick={onContactUsTextClick}>
-						Contact us
-					</div>
-				</div>
-				<div className={styles.termsConditionsParent}>
-					<div
-						className={styles.termsConditions}
-						onClick={onTermsConditionsClick}
-					>{`Terms & conditions`}</div>
-					<b className={styles.resources}>Legal</b>
-				</div>
 			</div>
 		</div>
 	);
