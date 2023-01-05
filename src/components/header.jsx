@@ -96,7 +96,7 @@ export default function Header() {
 						<div onClick={onUseCasesTextClick}>Use cases</div>
 						<div onClick={onGuidanceTextClick}>Guidance</div>
 					</Stack>
-					<ContactButton link="/contact-us" />
+					<ContactButton link="/contact-us" label="Contact us" />
 				</>
 			)}
 
