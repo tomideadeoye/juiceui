@@ -11,6 +11,7 @@ import JuiceAccordion from "../../components/muiAccordion";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
+		width: "100%",
 		background: theme.palette.background.default,
 	},
 

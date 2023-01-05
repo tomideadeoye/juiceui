@@ -1,6 +1,5 @@
-import { Grid, Stack } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { Box } from "@mui/system";
 import React from "react";
 
 const useStyles = makeStyles((theme) => ({
@@ -56,9 +55,12 @@ export const Checkrizer = ({ content }) => {
 				// className={styles.juiceIconsPaymentTriggered}
 				alt=""
 				src="../juiceiconspaymenttriggered88x88-1@2x.png"
-				width="5%"
+				width="10px"
 			/>
-			<Box ml={2}>{content}</Box>
+
+			<Typography variant="body2" fontWeight="300" ml={2}>
+				{content}
+			</Typography>
 		</Stack>
 	);
 };

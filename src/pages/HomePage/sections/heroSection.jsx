@@ -1,32 +1,20 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import ContactButton from "../../../components/juiceButton";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
-		width: "100%",
 		height: "80vh",
 		textAlign: "center",
 		backgroundImage: "url('../img@2x.png')",
 		backgroundSize: "contain",
 		backgroundPosition: "center",
 		backgroundRepeat: "no-repeat",
-		display: "flex",
 		flexDirection: "column",
 		justifyContent: "center",
 		alignItems: "center",
-		margin: theme.spacing(4, 0, 0, 0),
-		padding: theme.spacing(1, 4),
-	},
-	wrapper: {
-		display: "flex",
-		flexDirection: "column",
-		justifyContent: "center",
-		alignItems: "center",
-		"& > *": {
-			margin: theme.spacing(1, 0),
-		},
+		padding: theme.spacing(0, 4),
 	},
 
 	everythingYouNeedForReliab: {
@@ -59,24 +47,32 @@ export default function HeroSection() {
 	const styles = useStyles();
 
 	return (
-		<Box className={styles.container}>
-			<Stack className={styles.wrapper}>
-				<b className={styles.everythingYouNeedForReliab}>
-					Everything you need for reliable global payments
-				</b>
+		<Stack className={styles.container} spacing={4}>
+			<b className={styles.everythingYouNeedForReliab}></b>
+			<Typography
+				variant="h2"
+				fontWeight="550"
+				maxWidth={{ xs: "100%", md: "70%" }}
+			>
+				Everything you need for reliable global payments
+			</Typography>
 
-				<Box className={styles.juiceIsAnEcosystemOfServi}>
-					Juice is an ecosystem of services making business cross border payment
-					less complex, more reliable and compliant than ever before.
+			<Typography
+				variant="body1"
+				fontWeight="300"
+				maxWidth={{ xs: "100%", md: "60%" }}
+			>
+				Juice is an ecosystem of services making business cross border payment
+				less complex, more reliable and compliant than ever before.
+			</Typography>
+
+			<ContactButton color="primary" link="/contact-us" />
+			<div className={styles.credentials}>
+				<img className={styles.juiceUsers} alt="" src="../group-82.svg" />
+				<Box className={styles.diverseIndustryLeadersTrust} mt={2}>
+					DIVERSE INDUSTRY LEADERS TRUST JUICE
 				</Box>
-				<ContactButton color="primary" link="/contact-us" />
-				<div className={styles.credentials}>
-					<img className={styles.juiceUsers} alt="" src="../group-82.svg" />
-					<Box className={styles.diverseIndustryLeadersTrust} mt={2}>
-						DIVERSE INDUSTRY LEADERS TRUST JUICE
-					</Box>
-				</div>
-			</Stack>
-		</Box>
+			</div>
+		</Stack>
 	);
 }

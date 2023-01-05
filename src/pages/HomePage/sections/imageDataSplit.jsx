@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import ContactButton from "../../../components/juiceButton";
@@ -32,7 +32,10 @@ export default function ImageDataSplit({ data }) {
 	return (
 		<Stack direction="row" className={styles.container}>
 			<Stack className={styles.mainData} spacing={10}>
-				<Box>{data.title}</Box>
+				<Typography variant="h5" fontWeight="bold">
+					{data.title}
+				</Typography>
+
 				<Stack>
 					<Box>{data.description}</Box>
 					{data.iterable.map((item) => {
