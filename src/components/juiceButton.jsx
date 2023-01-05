@@ -28,17 +28,40 @@ const useStyles = makeStyles((theme) => ({
 			backgroundColor: theme.palette.primary.dark,
 		},
 	},
+
+	whiteBUtton: {
+		padding: "15px 50px",
+		borderRadius: theme.borderRadius.md,
+		backgroundColor: theme.palette.white.main,
+		color: theme.palette.grey[700],
+		width: "fit-content",
+		cursor: "pointer",
+		"& > a": {
+			color: theme.palette.grey[700],
+			textDecoration: "underline",
+		},
+
+		"&:hover": {
+			backgroundColor: theme.palette.primary.dark,
+		},
+	},
 }));
 
-export default function ContactButton({ color }) {
+export default function ContactButton({ color, link, label }) {
 	const styles = useStyles();
 
 	function colorHandler() {
 		if (color === "primary") {
 			return styles.buttonsbigprimarylabelChild;
+		} else if (color === "white") {
+			return styles.whiteBUtton;
 		}
 		return styles.buttons;
 	}
 
-	return <Box className={colorHandler()}>Contact us</Box>;
+	return (
+		<Box className={colorHandler()}>
+			<a href={link}>{label}</a>
+		</Box>
+	);
 }

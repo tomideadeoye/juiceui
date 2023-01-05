@@ -9,18 +9,18 @@ const useStyles = makeStyles((theme) => ({
 	container: {
 		width: "100%",
 		height: "100%",
-		background: "black",
+		background: theme.palette.grey[800],
 		color: "white",
 		"& > *": {
 			lineHeight: "32px",
 		},
 	},
 	mainData: {
-		padding: theme.spacing(2, 2),
+		padding: theme.spacing(4, 3, 2, 5),
 		lineHeight: "32px",
 
 		"& > *:first-child": {
-			fontSize: theme.typography.h4.fontSize,
+			// fontSize: theme.typography.h4.fontSize,
 			fontWeight: "bold",
 		},
 	},
@@ -29,28 +29,33 @@ const useStyles = makeStyles((theme) => ({
 export default function ImageDataSplit({ data }) {
 	const styles = useStyles();
 
+	const { title, description, iterable, imgLocation, button } = data;
+
 	return (
 		<Stack direction="row" className={styles.container}>
-			<Stack className={styles.mainData} spacing={10}>
-				<Typography variant="h5" fontWeight="bold">
-					{data.title}
+			<Stack className={styles.mainData} spacing={4}>
+				<Typography variant="h4" fontWeight="bold">
+					{title}
 				</Typography>
 
-				<Stack>
-					<Box>{data.description}</Box>
-					{data.iterable.map((item) => {
-						return <Checkrizer key={item} content={item} />;
-					})}
-				</Stack>
-				<ContactButton color="primary" link="/contact-us" />
+				<Typography variant="body1" fontWeight="300" lineHeight="32px">
+					{description}
+				</Typography>
+
+				{iterable.map((item) => {
+					return <Checkrizer key={item} content={item} />;
+				})}
+
+				<ContactButton color="white" link={button.link} label={button.item} />
 			</Stack>
 			<Box
 				component="img"
-				src={data.imgLocation}
+				src={imgLocation}
 				sx={{
 					backgroundRepeat: "no-repeat",
-					width: "60%",
-					height: "100%",
+					width: "100%",
+					height: "75vh",
+					backgroundSize: "cover",
 				}}
 			/>
 		</Stack>

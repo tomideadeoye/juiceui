@@ -69,9 +69,10 @@ export default function HeroSection() {
 			<ContactButton color="primary" link="/contact-us" />
 			<div className={styles.credentials}>
 				<img className={styles.juiceUsers} alt="" src="../group-82.svg" />
-				<Box className={styles.diverseIndustryLeadersTrust} mt={2}>
+				<Box className={styles.diverseIndustryLeadersTrust} mt={2}></Box>
+				<Typography variant="body1" fontWeight="300">
 					DIVERSE INDUSTRY LEADERS TRUST JUICE
-				</Box>
+				</Typography>
 			</div>
 		</Stack>
 	);

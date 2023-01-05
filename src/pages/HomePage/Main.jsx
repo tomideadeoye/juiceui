@@ -101,6 +101,7 @@ const Main = () => {
 			button: {
 				link: "https://docs.spendjuice.org/docs",
 				item: "Contact us",
+				image: "../icons24externallink.svg",
 			},
 		},
 	];

@@ -55,10 +55,11 @@ export const Checkrizer = ({ content }) => {
 				// className={styles.juiceIconsPaymentTriggered}
 				alt=""
 				src="../juiceiconspaymenttriggered88x88-1@2x.png"
-				width="10px"
+				width="15px"
+				height="15px"
 			/>
 
-			<Typography variant="body2" fontWeight="300" ml={2}>
+			<Typography variant="body1" fontWeight="300" ml={2}>
 				{content}
 			</Typography>
 		</Stack>
