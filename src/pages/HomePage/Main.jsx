@@ -196,6 +196,8 @@ const Main = () => {
 			<ImageDataSplit data={splitDataContent[0]} />
 			<Stack className={styles.acceptProcessPaymentsSection}>
 				<BenefitsSection />
+			</Stack>
+			<Stack className={styles.acceptProcessPaymentsSection}>
 				<BragSection2 />
 				<JuiceAccordion />
 			</Stack>

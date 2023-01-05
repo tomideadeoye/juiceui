@@ -66,7 +66,7 @@ export default function HeroSection() {
 				less complex, more reliable and compliant than ever before.
 			</Typography>
 
-			<ContactButton color="primary" link="/contact-us" />
+			<ContactButton color="primary" link="/contact-us" label="Contact Us" />
 			<div className={styles.credentials}>
 				<img className={styles.juiceUsers} alt="" src="../group-82.svg" />
 				<Box className={styles.diverseIndustryLeadersTrust} mt={2}></Box>

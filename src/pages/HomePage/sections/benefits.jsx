@@ -2,20 +2,17 @@ import React from "react";
 
 import { makeStyles } from "@mui/styles";
 import Benefits from "../../../components/benefits";
-import { Grid, Stack } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
 		width: "100%",
 		fontFamily: theme.typography.fontFamily,
-
-		"& > *:first-child": {
-			fontSize: theme.typography.h3.fontSize,
-		},
+		padding: theme.spacing(3, 0),
 		// select second child
-		"& > *:nth-child(2)": {
-			fontSize: theme.typography.fontSize,
-		},
+		// "& > *:nth-child(2)": {
+		// 	fontSize: theme.typography.fontSize,
+		// },
 	},
 	goodMatchSection: {
 		background: theme.palette.white.main,
@@ -77,12 +74,15 @@ export default function BenefitsSection() {
 	];
 
 	return (
-		<Stack className={styles.container} spacing={2}>
-			<b className={styles.header} data-scroll-to="benefitsText">
+		<Stack className={styles.container} spacing={3}>
+			<Typography variant="h4" fontWeight="bold" data-scroll-to="benefitsText">
 				Benefits
-			</b>
-			<div className={styles.whyJuice}>Why Juice</div>
-			<Grid container spacing={2}>
+			</Typography>
+			<Typography variant="body1" fontWeight={200} mt={4}>
+				Why Juice
+			</Typography>
+
+			<Grid container rowGap={3} columnSpacing={2}>
 				{benefitsData.map((benefit, index) => {
 					return (
 						<Grid item xs={12} sm={6} key={index}>

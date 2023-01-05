@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Box } from "@mui/material";
+import { Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 
@@ -16,13 +16,18 @@ const useStyles = makeStyles((theme) => ({
 			color: theme.palette.primary.light,
 		},
 	},
-	buttonsbigprimarylabelChild: {
+	dark: {
+		fontFamily: theme.typography.fontFamily,
 		padding: "15px 50px",
 		borderRadius: theme.borderRadius.md,
 		backgroundColor: theme.palette.grey[700],
 		color: theme.palette.white.main,
 		width: "fit-content",
 		cursor: "pointer",
+		"& > a": {
+			color: theme.palette.white.main,
+			textDecoration: "none",
+		},
 
 		"&:hover": {
 			backgroundColor: theme.palette.primary.dark,
@@ -36,13 +41,20 @@ const useStyles = makeStyles((theme) => ({
 		color: theme.palette.grey[700],
 		width: "fit-content",
 		cursor: "pointer",
+		fontWeight: theme.typography.fontWeightBold,
 		"& > a": {
 			color: theme.palette.grey[700],
 			textDecoration: "underline",
 		},
+		fontFamily: theme.typography.fontFamily,
 
 		"&:hover": {
 			backgroundColor: theme.palette.primary.dark,
+			color: theme.palette.white.main,
+
+			"& > a": {
+				color: theme.palette.white.main,
+			},
 		},
 	},
 }));
@@ -52,7 +64,7 @@ export default function ContactButton({ color, link, label }) {
 
 	function colorHandler() {
 		if (color === "primary") {
-			return styles.buttonsbigprimarylabelChild;
+			return styles.dark;
 		} else if (color === "white") {
 			return styles.whiteBUtton;
 		}
@@ -60,8 +72,8 @@ export default function ContactButton({ color, link, label }) {
 	}
 
 	return (
-		<Box className={colorHandler()}>
+		<Stack className={colorHandler()} direction="row" spacing={1}>
 			<a href={link}>{label}</a>
-		</Box>
+		</Stack>
 	);
 }

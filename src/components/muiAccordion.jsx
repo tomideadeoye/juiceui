@@ -6,8 +6,28 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Stack } from "@mui/system";
+import { makeStyles } from "@mui/styles";
+import ContactButton from "./juiceButton";
+
+const useStyles = makeStyles((theme) => ({
+	container: {
+		padding: theme.spacing(3, 0),
+	},
+
+	accordionText: {
+		margin: theme.spacing(0, 2),
+	},
+	match: {
+		margin: theme.spacing(4, 0),
+		padding: theme.spacing(2, 2),
+		background: theme.palette.white.main,
+		borderRadius: theme.borderRadius.md,
+	},
+}));
 
 export default function JuiceAccordion() {
+	const styles = useStyles();
+
 	const data = [
 		{
 			title: "Operating businesses",
@@ -26,9 +46,14 @@ export default function JuiceAccordion() {
 	];
 
 	return (
-		<Stack>
-			{" "}
-			<div>
+		<Stack className={styles.container} spacing={4}>
+			<Typography variant="h4" fontWeight="bold" data-scroll-to="benefitsText">
+				Payment solutions for diverse use cases
+			</Typography>
+			<Typography variant="body1" fontWeight={200} mt={4}>
+				Discover how we help some of Africa&apos;s leading businesses
+			</Typography>
+			<Stack>
 				{data.map((item) => {
 					return (
 						<Accordion key={item.title}>
@@ -37,7 +62,14 @@ export default function JuiceAccordion() {
 								aria-controls={item.title + "-content"}
 								id={item.title}
 							>
-								<Typography>{item.title} </Typography>
+								<Typography
+									variant="h6"
+									fontWeight="bold"
+									data-scroll-to="benefitsText"
+									className={styles.accordionText}
+								>
+									{item.title}
+								</Typography>
 							</AccordionSummary>
 							<AccordionDetails>
 								<Typography>{item.description}</Typography>
@@ -45,13 +77,29 @@ export default function JuiceAccordion() {
 						</Accordion>
 					);
 				})}
-			</div>
+			</Stack>
+			<Stack className={styles.match} spacing={3}>
+				<Typography
+					variant="h6"
+					fontWeight="bold"
+					data-scroll-to="benefitsText"
+				>
+					{" "}
+					Not sure if you’re a good match?
+				</Typography>
+				<Typography
+					variant="body1"
+					fontWeight={200}
+					data-scroll-to="benefitsText"
+				>
+					Want us to take a closer look at your idea and how you can utilize our
+					products? Let’s discuss in detail.
+				</Typography>
+				<ContactButton color="primary" link="/contact-us" label="Contact Us" />
+			</Stack>
 		</Stack>
 	);
 }
-
-
-
 
 // const navigate = useNavigate();
 

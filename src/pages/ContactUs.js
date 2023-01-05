@@ -222,13 +222,12 @@ const ContactUs = () => {
 						<div className={styles.div2}>
 							<div className={styles.notSureIfYoureAGoodMatcWrapper}>
 								<b className={styles.notSureIfYoureAGoodMatc}>
-									Not sure if you’re a good match?
+								
 								</b>
 							</div>
 							<div className={styles.wantUsToTakeACloserLookParent}>
 								<div className={styles.wantUsToTakeACloserLook}>
-									Want us to take a closer look at your idea and how you can
-									utilize our products? Let’s discuss in detail.
+									
 								</div>
 								<div
 									className={styles.buttonsbigsecondary}
