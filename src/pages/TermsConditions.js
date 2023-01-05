@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
 	container: {
 		padding: theme.spacing(4, 4),
 		fontFamily: theme.typography.fontFamily,
+		textAlign: "justify",
 	},
 	heading: {
 		fontSize: theme.typography.h5.fontSize,
