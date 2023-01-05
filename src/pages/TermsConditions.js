@@ -6,6 +6,7 @@ import { Box } from "@mui/system";
 const useStyles = makeStyles((theme) => ({
 	container: {
 		padding: theme.spacing(4, 4),
+		fontFamily: theme.typography.fontFamily,
 	},
 	heading: {
 		fontSize: theme.typography.h5.fontSize,

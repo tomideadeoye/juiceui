@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 		top: 0,
 		left: 0,
 		zIndex: 100,
+		fontFamily: theme.typography.fontFamily,
 	},
 	juiceLogo: {
 		width: 72,
@@ -99,9 +100,7 @@ export default function Header() {
 				</>
 			)}
 
-			<Box
-			
-			>
+			<Box>
 				<MUIDrawer />
 			</Box>
 		</Box>

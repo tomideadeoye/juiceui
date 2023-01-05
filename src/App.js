@@ -17,11 +17,20 @@ import { useEffect } from "react";
 import React from "react";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import { Box } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles((theme) => ({
+	global: {
+		fontFamily: theme.typography.fontFamily,
+	},
+}));
 
 function App() {
 	const action = useNavigationType();
 	const location = useLocation();
 	const pathname = location.pathname;
+	const styles = useStyles();
 
 	useEffect(() => {
 		if (action !== "POP") {
@@ -88,7 +97,7 @@ function App() {
 	}, [pathname]);
 
 	return (
-		<>
+		<Box className={styles.globalContainer}>
 			<Header />
 			<Routes>
 				<Route path="/" element={<Main />} />
@@ -110,7 +119,7 @@ function App() {
 				<Route path="/article" element={<Article />} />
 			</Routes>
 			<Footer />
-		</>
+		</Box>
 	);
 }
 export default App;

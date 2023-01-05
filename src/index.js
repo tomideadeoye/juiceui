@@ -1,9 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-// import "./global.css";
 import { ThemeProvider } from "@mui/styles";
 import theme from "./assets/theme";
 
@@ -11,11 +9,9 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-	<BrowserRouter>
-		<ThemeProvider theme={theme}>
+	<ThemeProvider theme={theme}>
+		<BrowserRouter>
 			<App />
-		</ThemeProvider>
-	</BrowserRouter>
+		</BrowserRouter>
+	</ThemeProvider>
 );
-
-reportWebVitals();

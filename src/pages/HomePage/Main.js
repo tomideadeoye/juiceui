@@ -9,6 +9,10 @@ import ImageDataSplit from "./sections/imageDataSplit";
 import BenefitsSection from "./sections/benefits";
 
 const useStyles = makeStyles((theme) => ({
+	container: {
+		background: theme.palette.background.default,
+	},
+
 	main: {
 		display: "flex",
 		flexDirection: "column",
@@ -132,7 +136,7 @@ const Main = () => {
 	];
 
 	return (
-		<>
+		<Stack className={styles.container}>
 			<Stack className={styles.main}>
 				<HeroSection />
 				<Stack className={styles.acceptProcessPaymentsSection} spacing={2}>
@@ -207,7 +211,7 @@ const Main = () => {
 				<BenefitsSection />
 			</Stack>
 			<ImageDataSplit data={splitDataContent[1]} />{" "}
-		</>
+		</Stack>
 	);
 };
 

@@ -3,9 +3,23 @@ import React, { useCallback } from "react";
 import { makeStyles } from "@mui/styles";
 import { useNavigate } from "react-router-dom";
 import Benefits from "../../../components/benefits";
-import { Grid } from "@mui/material";
+import { Grid, Stack } from "@mui/material";
+import JuiceAccordion from "../../../components/muiAccordion";
 
-const useStyles = makeStyles(() => ({}));
+const useStyles = makeStyles((theme) => ({
+	container: {
+		width: "100%",
+		fontFamily: theme.typography.fontFamily,
+
+		"& > *:first-child": {
+			fontSize: theme.typography.h3.fontSize,
+		},
+		// select second child
+		"& > *:nth-child(2)": {
+			fontSize: theme.typography.fontSize,
+		},
+	},
+}));
 
 export default function BenefitsSection() {
 	const styles = useStyles();
@@ -58,9 +72,26 @@ export default function BenefitsSection() {
 		},
 	];
 
+	const accordionData = [
+		{
+			title: "Operating businesses",
+			description:
+				"Juice is a payment platform that enables businesses to send and receive payments globally. We are a licensed payment institution regulated by the Central Bank of Nigeria (CBN).",
+		},
+
+		{
+			title: "Finance Managers",
+			description: "",
+		},
+		{
+			title: "BDCs and IMTOs",
+			description: "",
+		},
+	];
+
 	return (
-		<div className={styles.content}>
-			<b className={styles.benefits2} data-scroll-to="benefitsText">
+		<Stack className={styles.container} spacing={2}>
+			<b className={styles.header} data-scroll-to="benefitsText">
 				Benefits
 			</b>
 			<div className={styles.whyJuice}>Why Juice</div>
@@ -86,7 +117,7 @@ export default function BenefitsSection() {
 						Payment solutions for diverse use cases
 					</b>
 				</div>
-
+				<JuiceAccordion data={accordionData} />
 				<div className={styles.div5}>
 					<div className={styles.bg5} />
 					<b className={styles.b}>+70</b>
@@ -112,6 +143,6 @@ export default function BenefitsSection() {
 					onClick={onButtonsBigPrimaryLabelContainer1Click}
 				></div>
 			</div>
-		</div>
+		</Stack>
 	);
 }

@@ -22,6 +22,10 @@ export default createTheme({
 		h6: {
 			fontSize: "1.6rem",
 		},
+		subtitle1: {
+			fontSize: "1.4rem",
+		},
+
 		button: {
 			fontSize: "1rem",
 			fontWeight: 500,
