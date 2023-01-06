@@ -99,7 +99,7 @@ const Main = () => {
 			],
 			imgLocation: "../img4@2x.png",
 			button: {
-				link: "https://docs.spendjuice.org/docs",
+				link: "/contact-us",
 				item: "Contact us",
 				image: "../icons24externallink.svg",
 			},

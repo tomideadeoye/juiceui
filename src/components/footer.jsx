@@ -1,4 +1,4 @@
-import { Box, Grid, Stack } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,12 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(4, 3),
 		background: theme.palette.primary.main,
 		fontFamily: theme.typography.fontFamily,
+		[theme.breakpoints.down("sm")]: {
+			flexDirection: "column",
+			padding: theme.spacing(2, 1),
+			justifyContent: "center",
+			gap: theme.spacing(2),
+		},
 	},
 
 	juiceAfricaAllRightsReserParent: {
@@ -76,8 +82,22 @@ export default function Footer() {
 						}, [navigate])}
 					/>
 					<Stack className={styles.juiceAfricaAllRightsReser}>
-						<p>©2022 Juice Africa.</p>
-						<p>All rights reserved.</p>
+						<Typography
+							variant="body1"
+							fontWeight="300"
+							lineHeight="32px"
+							textAlign="justify"
+						>
+							2022 Juice Africa.
+						</Typography>
+						<Typography
+							variant="body1"
+							fontWeight="300"
+							lineHeight="32px"
+							textAlign="justify"
+						>
+							All rights reserved.
+						</Typography>
 					</Stack>
 				</Stack>
 			</Grid>
@@ -94,13 +114,17 @@ export default function Footer() {
 					<Stack>
 						<b className={styles.resources}>{item.title}</b>
 						{item.items.map((item, index) => (
-							<Box
+							<Typography
 								className={styles.routes}
 								onClick={() => navigate(item.link)}
 								key={index}
+								variant="body1"
+								fontWeight="300"
+								lineHeight="32px"
+								textAlign="justify"
 							>
 								{item.title}
-							</Box>
+							</Typography>
 						))}
 					</Stack>
 				</Grid>

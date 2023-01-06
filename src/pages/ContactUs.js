@@ -221,14 +221,10 @@ const ContactUs = () => {
 						</div>
 						<div className={styles.div2}>
 							<div className={styles.notSureIfYoureAGoodMatcWrapper}>
-								<b className={styles.notSureIfYoureAGoodMatc}>
-								
-								</b>
+								<b className={styles.notSureIfYoureAGoodMatc}></b>
 							</div>
 							<div className={styles.wantUsToTakeACloserLookParent}>
-								<div className={styles.wantUsToTakeACloserLook}>
-									
-								</div>
+								<div className={styles.wantUsToTakeACloserLook}></div>
 								<div
 									className={styles.buttonsbigsecondary}
 									onClick={onButtonsBigSecondaryContainerClick}
