@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Header() {
 	const styles = useStyles();
 	const navigate = useNavigate();
+	const path = window.location.pathname;
 
 	const onGuidanceTextClick = useCallback(() => {
 		const anchor = document.querySelector("[data-scroll-to='guidance']");
@@ -62,6 +63,11 @@ export default function Header() {
 	}, []);
 
 	const onBenefitsText1Click = useCallback(() => {
+		if (path !== "/") {
+			// navigate to home page
+			navigate("/");
+		}
+
 		const anchor = document.querySelector("[data-scroll-to='benefitsText']");
 		if (anchor) {
 			anchor.scrollIntoView({ block: "start", behavior: "smooth" });

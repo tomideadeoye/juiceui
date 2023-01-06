@@ -132,7 +132,7 @@ const AboutUs = () => {
 
 	return (
 		<PageTransition>
-			<Stack className={styles.container} spacing={4}>
+			<Stack className={styles.container} spacing={4} pt={6}>
 				<Stack className={styles.wrapper} spacing={4}>
 					{/* ABOUT US */}
 					<Stack
