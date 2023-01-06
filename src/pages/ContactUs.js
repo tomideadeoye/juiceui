@@ -119,6 +119,8 @@ const ContactUs = () => {
 								name="email"
 								autoComplete="email"
 								autoFocus
+								multiline
+								rows={5}
 							/>
 							<Button
 								type="submit"

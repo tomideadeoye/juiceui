@@ -8,6 +8,7 @@ import ImageDataSplit from "./sections/imageDataSplit";
 import BenefitsSection from "./sections/benefits";
 import BragSection2 from "./sections/bragSection2";
 import JuiceAccordion from "../../components/muiAccordion";
+import { PageTransition } from "../../components/animations";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -107,102 +108,108 @@ const Main = () => {
 	];
 
 	return (
-		<Stack className={styles.container}>
-			<HeroSection />
-			<Stack className={styles.acceptProcessPaymentsSection} spacing={3}>
-				<Typography variant="h4" fontWeight="bold" maxWidth="450px">
-					Accept and process payments in a secure and scalable way
-				</Typography>
-
-				<Grid container spacing={2} className={styles.speedySettlementsSection}>
-					<Grid item sm={12} md={6}>
-						<Stack spacing={2}>
-							<Typography variant="h5" fontWeight="bold">
-								Speedy settlements
-							</Typography>
-							<Typography
-								variant="body1"
-								fontWeight="300"
-								lineHeight="32px"
-								maxWidth="400px"
-							>
-								Legacy payments take up to 4 business days to settle. With
-								Juice’s rapid payment system, payments settle in only a couple
-								of hours. Save time and effort with effective scheme management,
-								and timely settlement.
-							</Typography>
-						</Stack>
-					</Grid>
-					<Grid item sm={12} md={6}>
-						<Box
-							sx={{
-								backgroundImage: `url(../img2@2x.png)`,
-								backgroundRepeat: "no-repeat",
-								backgroundSize: "cover",
-								height: "100%",
-								width: "100%",
-							}}
-						/>
-					</Grid>
-				</Grid>
-				{/* YOUR ARE IN CONTROL SECTION */}
-				<Stack className={styles.youAreInControl} spacing={3}>
-					<Typography variant="h5" fontWeight="bold">
-						You’re in control
+		<PageTransition>
+			<Stack className={styles.container}>
+				<HeroSection />
+				<Stack className={styles.acceptProcessPaymentsSection} spacing={3}>
+					<Typography variant="h4" fontWeight="bold" maxWidth="450px">
+						Accept and process payments in a secure and scalable way
 					</Typography>
 
-					<Grid container justifyContent="space-between" alignItems="center">
-						<Grid item sm={12} lg={6}>
-							<Typography variant="body1" fontWeight="300" lineHeight="32px">
-								One robust dashboard to manage all your finance operations
-								within our ecosystem
-							</Typography>
+					<Grid
+						container
+						spacing={2}
+						className={styles.speedySettlementsSection}
+					>
+						<Grid item sm={12} md={6}>
+							<Stack spacing={2}>
+								<Typography variant="h5" fontWeight="bold">
+									Speedy settlements
+								</Typography>
+								<Typography
+									variant="body1"
+									fontWeight="300"
+									lineHeight="32px"
+									maxWidth="400px"
+								>
+									Legacy payments take up to 4 business days to settle. With
+									Juice’s rapid payment system, payments settle in only a couple
+									of hours. Save time and effort with effective scheme
+									management, and timely settlement.
+								</Typography>
+							</Stack>
 						</Grid>
-						<Grid item sm={12} lg={6}>
-							<Typography
-								variant="body1"
-								fontWeight="300"
-								lineHeight="32px"
-								textAlign="justify"
-							>
-								With both top-level and indepth transaction history view on the
-								dashboard, Juice helps finance teams reconcile transactions
-								efficiently and conveniently.
-							</Typography>
+						<Grid item sm={12} md={6}>
+							<Box
+								sx={{
+									backgroundImage: `url(../img2@2x.png)`,
+									backgroundRepeat: "no-repeat",
+									backgroundSize: "cover",
+									height: "100%",
+									width: "100%",
+								}}
+							/>
 						</Grid>
 					</Grid>
-					<Box
-						src="../img1@2x.png"
-						alt="Juice Dashboard"
-						className={styles.imgIcon1}
-						component="img"
+					{/* YOUR ARE IN CONTROL SECTION */}
+					<Stack className={styles.youAreInControl} spacing={3}>
+						<Typography variant="h5" fontWeight="bold">
+							You’re in control
+						</Typography>
+
+						<Grid container justifyContent="space-between" alignItems="center">
+							<Grid item sm={12} lg={6}>
+								<Typography variant="body1" fontWeight="300" lineHeight="32px">
+									One robust dashboard to manage all your finance operations
+									within our ecosystem
+								</Typography>
+							</Grid>
+							<Grid item sm={12} lg={6}>
+								<Typography
+									variant="body1"
+									fontWeight="300"
+									lineHeight="32px"
+									textAlign="justify"
+								>
+									With both top-level and indepth transaction history view on
+									the dashboard, Juice helps finance teams reconcile
+									transactions efficiently and conveniently.
+								</Typography>
+							</Grid>
+						</Grid>
+						<Box
+							src="../img1@2x.png"
+							alt="Juice Dashboard"
+							className={styles.imgIcon1}
+							component="img"
+							width="100%"
+						/>
+					</Stack>
+
+					<Stack
+						direction={{ xs: "column", sm: "row" }}
+						justifyContent="space-between"
+						alignItems="center"
+						spacing={2}
 						width="100%"
-					/>
-				</Stack>
+					>
+						<Benefits data={benefitsArray[0]} />
+						<Benefits data={benefitsArray[1]} />
+					</Stack>
 
-				<Stack
-					direction={{ xs: "column", sm: "row" }}
-					justifyContent="space-between"
-					alignItems="center"
-					spacing={2}
-					width="100%"
-				>
-					<Benefits data={benefitsArray[0]} />
-					<Benefits data={benefitsArray[1]} />
+					<ChargesSection />
 				</Stack>
-
-				<ChargesSection />
+				<ImageDataSplit data={splitDataContent[0]} />
+				<Stack className={styles.acceptProcessPaymentsSection}>
+					<BenefitsSection />
+				</Stack>
+				<Stack className={styles.acceptProcessPaymentsSection}>
+					<BragSection2 />
+					<JuiceAccordion />
+				</Stack>
+				<ImageDataSplit data={splitDataContent[1]} />{" "}
 			</Stack>
-			<ImageDataSplit data={splitDataContent[0]} />
-			<Stack className={styles.acceptProcessPaymentsSection}>
-				<BenefitsSection />
-			</Stack>
-			<Stack className={styles.acceptProcessPaymentsSection}>
-				<BragSection2 />
-				<JuiceAccordion />
-			</Stack>
-			<ImageDataSplit data={splitDataContent[1]} />{" "}
-		</Stack>
+		</PageTransition>
 	);
 };
 

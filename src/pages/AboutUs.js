@@ -4,6 +4,7 @@ import { makeStyles } from "@mui/styles";
 import Benefits from "../components/benefits";
 import ImageDataSplit from "./HomePage/sections/imageDataSplit";
 import Idcard from "../components/idcard";
+import { PageTransition } from "../components/animations";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -130,131 +131,137 @@ const AboutUs = () => {
 	const styles = useStyles();
 
 	return (
-		<Stack className={styles.container} spacing={4}>
-			<Stack className={styles.wrapper} spacing={4}>
-				{/* ABOUT US */}
-				<Stack
-					direction={{ sm: "column", md: "row" }}
-					justifyContent="space-between"
-					spacing={3}
-				>
-					<Stack>
-						<Typography variant="h3" fontWeight={700} gutterBottom>
-							About us
-						</Typography>
-						<Typography
-							variant="body1"
-							fontWeight={300}
-							maxWidth={500}
-							lineHeight={2}
-						>
-							For one year, Juice has been innovating with payment technology.
-							With every iteration, we move closer to our ultimate goal - to get
-							global payments to the safest, quickest and most inexpensive it
-							can be.
-						</Typography>
-					</Stack>
-					<img
-						className={styles.imgIcon}
-						alt=""
-						src="../img5@2x.png"
-						height={300}
-					/>
-				</Stack>
-				{/* JUICE VALUES */}
-				<Typography variant="h3" fontWeight={400} gutterBottom>
-					Juice values
-				</Typography>
-				<Typography variant="body1" fontWeight={300} gutterBottom>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</Typography>
-				<Grid container spacing={2} className={styles.speedySettlementsSection}>
-					<Grid item sm={12} md={6}>
-						<Stack spacing={2}>
-							<Typography variant="h5" fontWeight="bold">
-								Speedy settlements
+		<PageTransition>
+			<Stack className={styles.container} spacing={4}>
+				<Stack className={styles.wrapper} spacing={4}>
+					{/* ABOUT US */}
+					<Stack
+						direction={{ sm: "column", md: "row" }}
+						justifyContent="space-between"
+						spacing={3}
+					>
+						<Stack>
+							<Typography variant="h3" fontWeight={700} gutterBottom>
+								About us
 							</Typography>
 							<Typography
 								variant="body1"
-								fontWeight="300"
-								lineHeight="32px"
-								maxWidth="400px"
+								fontWeight={300}
+								maxWidth={500}
+								lineHeight={2}
 							>
-								Legacy payments take up to 4 business days to settle. With
-								Juice’s rapid payment system, payments settle in only a couple
-								of hours. Save time and effort with effective scheme management,
-								and timely settlement.
+								For one year, Juice has been innovating with payment technology.
+								With every iteration, we move closer to our ultimate goal - to
+								get global payments to the safest, quickest and most inexpensive
+								it can be.
 							</Typography>
 						</Stack>
-					</Grid>
-					<Grid item sm={12} md={6}>
-						<Box
-							sx={{
-								backgroundImage: `url(../img2@2x.png)`,
-								backgroundRepeat: "no-repeat",
-								backgroundSize: "cover",
-								height: "100%",
-								width: "100%",
-							}}
+						<img
+							className={styles.imgIcon}
+							alt=""
+							src="../img5@2x.png"
+							height={300}
 						/>
+					</Stack>
+					{/* JUICE VALUES */}
+					<Typography variant="h3" fontWeight={400} gutterBottom>
+						Juice values
+					</Typography>
+					<Typography variant="body1" fontWeight={300} gutterBottom>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					</Typography>
+					<Grid
+						container
+						spacing={2}
+						className={styles.speedySettlementsSection}
+					>
+						<Grid item sm={12} md={6}>
+							<Stack spacing={2}>
+								<Typography variant="h5" fontWeight="bold">
+									Speedy settlements
+								</Typography>
+								<Typography
+									variant="body1"
+									fontWeight="300"
+									lineHeight="32px"
+									maxWidth="400px"
+								>
+									Legacy payments take up to 4 business days to settle. With
+									Juice’s rapid payment system, payments settle in only a couple
+									of hours. Save time and effort with effective scheme
+									management, and timely settlement.
+								</Typography>
+							</Stack>
+						</Grid>
+						<Grid item sm={12} md={6}>
+							<Box
+								sx={{
+									backgroundImage: `url(../img2@2x.png)`,
+									backgroundRepeat: "no-repeat",
+									backgroundSize: "cover",
+									height: "100%",
+									width: "100%",
+								}}
+							/>
+						</Grid>
 					</Grid>
-				</Grid>
-				<Stack spacing={2} direction={{ xs: "column", sm: "row" }}>
-					<Benefits data={values[0]} />
-					<Benefits data={values[1]} />
+					<Stack spacing={2} direction={{ xs: "column", sm: "row" }}>
+						<Benefits data={values[0]} />
+						<Benefits data={values[1]} />
+					</Stack>
+					{/* TEAMS */}
+					<Typography variant="h3" fontWeight={400} gutterBottom>
+						Our team
+					</Typography>
+					<Typography variant="body1" fontWeight={300} gutterBottom>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					</Typography>
+					<Typography variant="h5" fontWeight={700} gutterBottom>
+						Management
+					</Typography>
+					<Grid container>
+						{teamMembers.management.map((member) => (
+							<Grid key={member.name} item sm={12} md={4}>
+								<Idcard data={member} />
+							</Grid>
+						))}
+					</Grid>
+
+					<Typography variant="h5" fontWeight={700} gutterBottom>
+						Engineering
+					</Typography>
+					<Grid container>
+						{teamMembers.engineering.map((member) => (
+							<Grid key={member.name} item sm={12} md={4}>
+								<Idcard data={member} />
+							</Grid>
+						))}
+					</Grid>
+					<Typography variant="h5" fontWeight={700} gutterBottom>
+						Product
+					</Typography>
+					<Grid container>
+						{teamMembers.product.map((member) => (
+							<Grid key={member.name} item sm={12} md={4}>
+								<Idcard data={member} />
+							</Grid>
+						))}
+					</Grid>
+					<Typography variant="h5" fontWeight={700} gutterBottom>
+						Treasury Ops
+					</Typography>
+					<Grid container>
+						{teamMembers.treasury.map((member) => (
+							<Grid key={member.name} item xs={12} sm={6} md={4}>
+								<Idcard data={member} />
+							</Grid>
+						))}
+					</Grid>
 				</Stack>
-				{/* TEAMS */}
-				<Typography variant="h3" fontWeight={400} gutterBottom>
-					Our team
-				</Typography>
-				<Typography variant="body1" fontWeight={300} gutterBottom>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				</Typography>
-				<Typography variant="h5" fontWeight={700} gutterBottom>
-					Management
-				</Typography>
-				<Grid container>
-					{teamMembers.management.map((member) => (
-						<Grid key={member.name} item sm={12} md={4}>
-							<Idcard data={member} />
-						</Grid>
-					))}
-				</Grid>
 
-				<Typography variant="h5" fontWeight={700} gutterBottom>
-					Engineering
-				</Typography>
-				<Grid container>
-					{teamMembers.engineering.map((member) => (
-						<Grid key={member.name} item sm={12} md={4}>
-							<Idcard data={member} />
-						</Grid>
-					))}
-				</Grid>
-				<Typography variant="h5" fontWeight={700} gutterBottom>
-					Product
-				</Typography>
-				<Grid container>
-					{teamMembers.product.map((member) => (
-						<Grid key={member.name} item sm={12} md={4}>
-							<Idcard data={member} />
-						</Grid>
-					))}
-				</Grid>
-				<Typography variant="h5" fontWeight={700} gutterBottom>
-					Treasury Ops
-				</Typography>
-				<Grid container>
-					{teamMembers.treasury.map((member) => (
-						<Grid key={member.name} item xs={12} sm={6} md={4}>
-							<Idcard data={member} />
-						</Grid>
-					))}
-				</Grid>
+				<ImageDataSplit data={splitDataContent[0]} />
 			</Stack>
-
-			<ImageDataSplit data={splitDataContent[0]} />
-		</Stack>
+		</PageTransition>
 	);
 };
 
