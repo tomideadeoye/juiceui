@@ -16,6 +16,7 @@ import React from "react";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import AnimatedCursor from "react-animated-cursor";
+import SingleArticle from "./pages/SingleArticle";
 // import { Box } from "@mui/material";
 
 function App() {
@@ -110,6 +111,8 @@ function App() {
 				<Route path="/terms-conditions" element={<TermsConditions />} />
 
 				<Route path="/articles" element={<Articles />} />
+
+				<Route path="/article-details" element={<SingleArticle />} />
 
 				<Route path="/article" element={<Article />} />
 			</Routes>

@@ -1,6 +1,7 @@
-import { Chip, Stack, TextField, Typography } from "@mui/material";
+import { Box, Chip, Stack, TextField, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { AnimationMakerCards } from "../components/animations";
 
 const useStyles = makeStyles((theme) => ({
@@ -42,6 +43,7 @@ const articles = [
 
 const Articles = () => {
 	const styles = useStyles();
+	const navigate = useNavigate();
 
 	return (
 		<Stack className={styles.container} spacing={8} alignItems="center" mb={10}>
@@ -101,45 +103,48 @@ const Articles = () => {
 				{articles.map((item) => {
 					return (
 						<AnimationMakerCards key={item.id}>
-							<Stack
-								direction={{ sm: "column", md: "row" }}
-								justifyContent="space-between"
-								spacing={3}
-								alignItems="center"
-								className={styles.cardBox}
-							>
+							<Box onClick={() => navigate(`/article-details`)}>
+								{" "}
 								<Stack
+									direction={{ sm: "column", md: "row" }}
+									justifyContent="space-between"
 									spacing={3}
-									padding={3}
-									// sx={{
-									// 	padding: { sm: "1rem", md: "2rem" },
-									// }}
+									alignItems="center"
+									className={styles.cardBox}
 								>
-									<Typography
-										variant="body1"
-										fontWeight={600}
-										gutterBottom
-										maxWidth={300}
+									<Stack
+										spacing={3}
+										padding={3}
+										// sx={{
+										// 	padding: { sm: "1rem", md: "2rem" },
+										// }}
 									>
-										{item.title}
-									</Typography>
-									<Stack direction="row" spacing={3}>
-										<Chip
-											label="Payments"
-											color="primary"
-											sx={{
-												backgroundColor: "#7c74e9",
-											}}
-										/>
+										<Typography
+											variant="body1"
+											fontWeight={600}
+											gutterBottom
+											maxWidth={300}
+										>
+											{item.title}
+										</Typography>
+										<Stack direction="row" spacing={3}>
+											<Chip
+												label="Payments"
+												color="primary"
+												sx={{
+													backgroundColor: "#7c74e9",
+												}}
+											/>
+										</Stack>
 									</Stack>
+									<img
+										className={styles.imgIcon}
+										alt=""
+										src="../img20@2x.png"
+										height={300}
+									/>
 								</Stack>
-								<img
-									className={styles.imgIcon}
-									alt=""
-									src="../img20@2x.png"
-									height={300}
-								/>
-							</Stack>
+							</Box>
 						</AnimationMakerCards>
 					);
 				})}

@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const TermsConditions = () => {
+const SingleArticle = () => {
 	const styles = useStyles();
 
 	return (
@@ -442,4 +442,4 @@ const TermsConditions = () => {
 	);
 };
 
-export default TermsConditions;
+export default SingleArticle;
