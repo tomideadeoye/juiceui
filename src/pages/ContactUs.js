@@ -3,7 +3,7 @@ import React from "react";
 import { makeStyles } from "@mui/styles";
 import JuiceAccordion from "../components/muiAccordion";
 import theme from "../assets/theme";
-import { Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 
 const useStyles = makeStyles(() => ({
 	container: {
@@ -16,10 +16,15 @@ const useStyles = makeStyles(() => ({
 	form: {
 		borderRadius: theme.borderRadius.md,
 		backgroundColor: theme.palette.white.main,
-		width: "100%",
+		// width: "100%",
+		maxWidth: 500,
 		padding: theme.spacing(2, 2),
 	},
 }));
+
+const handleSubmit = (e) => {
+	e.preventDefault();
+};
 
 const ContactUs = () => {
 	const styles = useStyles();
@@ -29,8 +34,10 @@ const ContactUs = () => {
 			<Stack
 				direction={{ xs: "column", md: "row" }}
 				justifyContent="space-between"
+				mt={5}
+				mb={5}
 			>
-				<Stack spacing={2}>
+				<Stack spacing={3}>
 					<Typography variant="h3" fontWeight={700} gutterBottom>
 						How can we help ?
 					</Typography>
@@ -61,61 +68,71 @@ const ContactUs = () => {
 				</Stack>
 				<Stack>
 					<Stack className={styles.form}>
-						<Stack
-							component="form"
-							onSubmit={(e) => this.handelSubmit(e)}
-							spacing={2}
-						>
-							<div className="form-group">
-								<input
-									type="text"
-									className="form-control"
-									id="exampleInputPassword1"
-									placeholder="First name (required)"
-									// defaultValue={this.state.name}
-								/>
-							</div>
-							<div className="form-group">
-								<input
-									type="email"
-									className="form-control"
-									id="exampleInputEmail1"
-									placeholder="Last name (required)"
-									// defaultValue={this.state.email}
-								/>
-							</div>
-							<div className="form-check">
-								<input
-									type="text"
-									className="form-control"
-									id="exampleCheck1"
-									placeholder="Company (required)"
-									// defaultValue={this.state.city}
-								/>
-							</div>
-							<div className="form-check">
-								<input
-									type="text"
-									className="form-control"
-									id="exampleCheck1"
-									placeholder="Message (required)"
-									// defaultValue={this.state.city}
-								/>
-							</div>
-							<div className="form-check">
-								<input
-									type="text"
-									className="form-control"
-									id="exampleCheck1"
-									placeholder="Company email (required)"
-									// defaultValue={this.state.city}
-								/>
-							</div>
-							<br />
-							<button type="submit" className="btn btn-primary">
-								Submit
-							</button>
-						</Stack>
+						<Box component="form" onSubmit={handleSubmit} noValidate>
+							<TextField
+								margin="normal"
+								required
+								fullWidth
+								id="email"
+								label="First name (required)"
+								name="email"
+								autoComplete="email"
+								autoFocus
+								borderRadius={theme.borderRadius.md}
+							/>
+							<TextField
+								margin="normal"
+								required
+								fullWidth
+								id="email"
+								label="Last name (required)"
+								name="email"
+								autoComplete="email"
+								autoFocus
+							/>{" "}
+							<TextField
+								margin="normal"
+								required
+								fullWidth
+								id="email"
+								label="Company email (required)"
+								name="email"
+								autoComplete="email"
+								autoFocus
+							/>
+							<TextField
+								margin="normal"
+								required
+								fullWidth
+								id="email"
+								label="Company (required)"
+								name="email"
+								autoComplete="email"
+								autoFocus
+							/>{" "}
+							<TextField
+								margin="normal"
+								required
+								fullWidth
+								id="email"
+								label="Message (required)"
+								name="email"
+								autoComplete="email"
+								autoFocus
+							/>
+							<Button
+								type="submit"
+								fullWidth
+								variant="contained"
+								sx={{
+									backgroundColor: theme.palette.grey[800],
+									mt: 3,
+									mb: 2,
+								}}
+							>
+								Sign In
+							</Button>
+						</Box>
 					</Stack>
 				</Stack>
 			</Stack>
