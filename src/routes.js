@@ -3,7 +3,7 @@ const footerItems = [
 		title: "Resources",
 		items: [
 			{ title: "Documentation", link: "https://docs.spendjuice.org/docs" },
-			{ title: "Articles", link: "/articles" },
+			// { title: "Articles", link: "/articles" },
 		],
 	},
 	{
