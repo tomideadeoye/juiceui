@@ -5,6 +5,7 @@ import { AnimationMakerCards } from "../components/animations";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
+		background: theme.palette.background.default,
 		padding: theme.spacing(2, 5),
 		[theme.breakpoints.down("md")]: {
 			padding: theme.spacing(2, 3),

@@ -32,16 +32,18 @@ export default function JuiceAccordion() {
 		{
 			title: "Operating businesses",
 			description:
-				"Juice is a payment platform that enables businesses to send and receive payments globally. We are a licensed payment institution regulated by the Central Bank of Nigeria (CBN).",
+				"Empower your team with scalable technology that saves you time and money. Optimize your treasury operations to move money in the quickest and most compliant way possible. ",
 		},
 
 		{
 			title: "Finance Managers",
-			description: "",
+			description:
+				"Start accepting payments in real time, no matter where your customers are based. Payments will settle in under one day. Increase your conversion with multiple payment methods your customers can choose from, for their ease.",
 		},
 		{
 			title: "BDCs and IMTOs",
-			description: "",
+			description:
+				"Convert local currency to USD with ease. Expand your diaspora remittance inflow and outflow to over 100 countries worldwide. ",
 		},
 	];
 
@@ -56,15 +58,34 @@ export default function JuiceAccordion() {
 			<Stack>
 				{data.map((item) => {
 					return (
-						<Accordion key={item.title}>
+						<Accordion
+							key={item.title}
+							sx={{
+								margin: "10px 0px",
+								borderRadius: "10px",
+								border: "none",
+								boxShadow: "none",
+							}}
+						>
 							<AccordionSummary
-								expandIcon={<ExpandMoreIcon />}
+								sx={{
+									padding: "15px 20px",
+									borderRadius: "40px",
+								}}
+								expandIcon={
+									<ExpandMoreIcon
+										sx={{
+											background: "#f6f7f8",
+											borderRadius: "20%",
+										}}
+									/>
+								}
 								aria-controls={item.title + "-content"}
 								id={item.title}
 							>
 								<Typography
 									variant="h6"
-									fontWeight="bold"
+									fontWeight={500}
 									data-scroll-to="benefitsText"
 									className={styles.accordionText}
 								>
@@ -72,7 +93,12 @@ export default function JuiceAccordion() {
 								</Typography>
 							</AccordionSummary>
 							<AccordionDetails>
-								<Typography variant="body1" fontWeight={200}>
+								<Typography
+									variant="body1"
+									fontWeight={200}
+									maxWidth="700px"
+									lineHeight={2}
+								>
 									{item.description}
 								</Typography>
 							</AccordionDetails>

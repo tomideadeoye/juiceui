@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		"&:hover": {
 			boxShadow: theme.shadows[2],
+			margin: theme.spacing(3, 0),
 		},
 	},
 

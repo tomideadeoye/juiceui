@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
 			// fontSize: theme.typography.h4.fontSize,
 			fontWeight: "bold",
 		},
+		"&:hover": {
+			background: "#322e5d",
+		},
 	},
 
 	image: {
@@ -72,6 +75,11 @@ export default function ImageDataSplit({ data }) {
 					width: "100%",
 					height: "75vh",
 					backgroundSize: "cover",
+					filter: "grayscale(100%)",
+					"&:hover": {
+						filter: "grayscale(0%)",
+						transition: "all 1s ease",
+					},
 				}}
 			/>
 		</Stack>

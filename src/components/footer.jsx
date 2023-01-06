@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(4, 3),
 		background: theme.palette.primary.main,
 		fontFamily: theme.typography.fontFamily,
+
 		[theme.breakpoints.down("sm")]: {
 			flexDirection: "column",
 			padding: theme.spacing(2, 1),
@@ -22,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
 		},
 		"& > a": {
 			textDecoration: "none",
+		},
+
+		"&:hover": {
+			background: theme.palette.pink.main,
 		},
 	},
 

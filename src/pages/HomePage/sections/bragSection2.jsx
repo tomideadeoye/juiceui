@@ -1,4 +1,4 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 import React from "react";
@@ -10,9 +10,13 @@ const useStyles = makeStyles((theme) => ({
 		color: "white",
 		borderRadius: theme.borderRadius.md,
 		fontFamily: theme.typography.fontFamily,
-		padding: theme.spacing(2, 2),
+		padding: theme.spacing(3, 2),
 		"& > *": {
 			lineHeight: "32px",
+		},
+
+		"&:hover": {
+			background: "#322e5d",
 		},
 	},
 }));
@@ -36,24 +40,33 @@ export default function BragSection2() {
 	];
 
 	return (
-		<Stack className={styles.container} spacing={4}>
-			<Grid container spacing={1}>
+		<Stack className={styles.container} spacing={5} justifyContent="center">
+			<Stack
+				direction={{ sm: "column", md: "row" }}
+				justifyContent="space-around"
+				spacing={5}
+			>
 				{bragData.map((data) => {
 					return (
-						<Grid item sm={12} md={4} key={data.title}>
-							<Stack spacing={2}>
-								<Typography variant="h5" fontWeight={600}>
-									{data.title}
-								</Typography>
-								<Typography variant="body2" fontWeight={200} maxWidth="160px">
-									{data.description}
-								</Typography>
-							</Stack>
-						</Grid>
+						<Stack spacing={2} key={data.title}>
+							<Typography variant="h4" fontWeight={600} mt={2}>
+								{data.title}
+							</Typography>
+							<Typography variant="body2" fontWeight={200} maxWidth="160px">
+								{data.description}
+							</Typography>
+						</Stack>
 					);
 				})}
-			</Grid>
-			<Typography fontSize="10px" fontWeight={100} letterSpacing=".5px">
+			</Stack>
+
+			<Typography
+				fontSize="10px"
+				fontWeight={100}
+				letterSpacing=".5px"
+				textAlign="center"
+				mt={2}
+			>
 				ALL BRAGGING RIGHTS UNRESERVED.*
 			</Typography>
 		</Stack>

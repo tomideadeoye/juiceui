@@ -55,6 +55,9 @@ const useStyles = makeStyles((theme) => ({
 		color: theme.palette.white.main,
 		lineHeight: "32px",
 	},
+	controlTextBox: {
+		padding: theme.spacing(2, 4, 0, 3),
+	},
 }));
 
 const Main = () => {
@@ -122,29 +125,47 @@ const Main = () => {
 					</Grid>
 					{/* YOUR ARE IN CONTROL SECTION */}
 					<Stack className={styles.youAreInControl} spacing={3}>
-						<Typography variant="h5" fontWeight="bold">
-							You’re in control
-						</Typography>
-						<Grid container justifyContent="space-between" alignItems="center">
-							<Grid item sm={12} lg={6}>
-								<Typography variant="body1" fontWeight="300" lineHeight="32px">
+						<Stack spacing={3} className={styles.controlTextBox}>
+							<Typography variant="h5" fontWeight="bold" mt={2}>
+								You’re in control
+							</Typography>
+							<Stack
+								direction={{ xs: "column", sm: "row" }}
+								justifyContent="space-between"
+							>
+								<Typography
+									variant="body1"
+									fontWeight="300"
+									lineHeight="32px"
+									maxWidth={{ xs: "100%", sm: "400px" }}
+								>
 									One robust dashboard to manage all your finance operations
 									within our ecosystem
 								</Typography>
-							</Grid>
-							<Grid item sm={12} lg={6}>
 								<Typography
 									variant="body1"
 									fontWeight="300"
 									lineHeight="32px"
 									textAlign="justify"
+									maxWidth={{ xs: "100%", sm: "400px" }}
 								>
 									With both top-level and indepth transaction history view on
 									the dashboard, Juice helps finance teams reconcile
 									transactions efficiently and conveniently.
 								</Typography>
-							</Grid>
-						</Grid>
+							</Stack>
+						</Stack>
+
+						{/* <Grid
+							container
+							justifyContent="space-around"
+							alignItems="left"
+							columnSpacing={2}
+							padding={4}
+						>
+							<Grid item sm={12} lg={6}></Grid>
+							<Grid item sm={12} lg={6}></Grid>
+						</Grid> */}
 						<AnimationMakerScroll>
 							<Box
 								src="../img1@2x.png"
