@@ -41,6 +41,7 @@ export default createTheme({
 		blue: {
 			100: "#66c3fa",
 			200: "#269afc",
+			300: "#B9E9F2",
 		},
 		grey: {
 			100: "#f5f6f9",

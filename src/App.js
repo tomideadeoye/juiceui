@@ -34,7 +34,6 @@ function App() {
 		let title = "";
 		let metaDescription = "";
 
-		//TODO: Update meta titles and descriptions below
 		switch (pathname) {
 			case "/":
 				title = "";
