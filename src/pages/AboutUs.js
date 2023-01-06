@@ -3,12 +3,18 @@ import { Box, Grid, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Benefits from "../components/benefits";
 import ImageDataSplit from "./HomePage/sections/imageDataSplit";
+import Idcard from "../components/idcard";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
-		backgroundColor: theme.palette.background,
+		backgroundColor: theme.palette.background.default,
 	},
-	wrapper: { padding: theme.spacing(2, 5) },
+	wrapper: {
+		padding: theme.spacing(2, 5),
+		[theme.breakpoints.down("md")]: {
+			padding: theme.spacing(2, 3),
+		},
+	},
 	speedySettlementsSection: {
 		borderRadius: theme.borderRadius.md,
 		backgroundColor: theme.palette.white.main,
@@ -55,16 +61,82 @@ const splitDataContent = [
 	},
 ];
 
+const teamMembers = {
+	management: [
+		{
+			name: "Ife Johnson",
+			image: "../img18@2x.png",
+		},
+		{
+			name: "Justin Ziegler",
+			position: "CEO",
+			image: "../img17@2x.png",
+		},
+	],
+	engineering: [
+		{
+			name: "Ridwan Otunn",
+			image: "../img16@2x.png",
+		},
+		{
+			name: "Pelumi Sola-Aremu",
+			image: "../img15@2x.png",
+		},
+		{
+			name: "Uk Chukundah",
+			image: "../img14@2x.png",
+		},
+		{
+			name: "Popsana Barida",
+			image: "../img13@2x.png",
+		},
+		{
+			name: "Rasheed Atanda",
+			image: "../img12@2x.png",
+		},
+		{
+			name: "Chizi Ogbonda",
+			image: "../img11@2x.png",
+		},
+		{
+			name: "Joseph Oladokun",
+			image: "../img10@2x.png",
+		},
+	],
+	product: [
+		{
+			name: "Ron Ogheneruona",
+			image: "../img9@2x.png",
+		},
+		{
+			name: "Grace Thompson",
+			image: "../img8@2x.png",
+		},
+		{
+			name: "Tomasz Zastawny",
+			image: "../img7@2x.png",
+		},
+	],
+
+	treasury: [
+		{
+			name: "Uche Okehie",
+			image: "../image-12@2x.png",
+		},
+	],
+};
+
 const AboutUs = () => {
 	const styles = useStyles();
 
 	return (
 		<Stack className={styles.container} spacing={4}>
-			<Stack className={styles.wrapper}>
+			<Stack className={styles.wrapper} spacing={4}>
 				{/* ABOUT US */}
 				<Stack
-					direction={{ xs: "column", sm: "row" }}
+					direction={{ sm: "column", md: "row" }}
 					justifyContent="space-between"
+					spacing={3}
 				>
 					<Stack>
 						<Typography variant="h3" fontWeight={700} gutterBottom>
@@ -138,172 +210,48 @@ const AboutUs = () => {
 				<Typography variant="body1" fontWeight={300} gutterBottom>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 				</Typography>
-			</Stack>
+				<Typography variant="h5" fontWeight={700} gutterBottom>
+					Management
+				</Typography>
+				<Grid container>
+					{teamMembers.management.map((member) => (
+						<Grid key={member.name} item sm={12} md={4}>
+							<Idcard data={member} />
+						</Grid>
+					))}
+				</Grid>
 
-			<div className={styles.ourTeam}>
-				<div className={styles.treasuryOps}>
-					<b className={styles.treasuryOps1}>Treasury Ops</b>
-					<div className={styles.bg3} />
-					<img className={styles.linkedinIcon} alt="" src="../linkedin.svg" />
-					<b className={styles.ucheOkehie}>Uche Okehie</b>
-					<div className={styles.jobPositionTitle}>Job position title</div>
-					<div className={styles.img}>
-						<div className={styles.image13} />
-						<img className={styles.imgChild} alt="" src="../vector-2.svg" />
-						<img
-							className={styles.image12Icon}
-							alt=""
-							src="../image-12@2x.png"
-						/>
-					</div>
-				</div>
-				<div className={styles.product}>
-					<div className={styles.div}>
-						<div className={styles.bg4} />
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle1}>Job position title</div>
-						<b className={styles.tomaszZastawny}>Tomasz Zastawny</b>
-						<img className={styles.imgIcon2} alt="" src="../img7@2x.png" />
-					</div>
-					<div className={styles.div1}>
-						<div className={styles.bg4} />
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle1}>Job position title</div>
-						<b className={styles.tomaszZastawny}>Grace Thompson</b>
-						<img className={styles.imgIcon2} alt="" src="../img8@2x.png" />
-					</div>
-					<div className={styles.div2}>
-						<div className={styles.bg4} />
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle1}>Job position title</div>
-						<b className={styles.tomaszZastawny}>Ron Ogheneruona</b>
-						<img className={styles.imgIcon2} alt="" src="../img9@2x.png" />
-					</div>
-					<b className={styles.product1}>Product</b>
-				</div>
-				<div className={styles.engineering}>
-					<div className={styles.div3}>
-						<div className={styles.bg4} />
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle1}>Job position title</div>
-						<b className={styles.tomaszZastawny}>Joseph Oladokun</b>
-						<img className={styles.imgIcon2} alt="" src="../img10@2x.png" />
-					</div>
-					<div className={styles.div4}>
-						<div className={styles.bg4} />
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle1}>Job position title</div>
-						<b className={styles.tomaszZastawny}>Chizi Ogbonda</b>
-						<img className={styles.imgIcon2} alt="" src="../img11@2x.png" />
-					</div>
-					<div className={styles.div5}>
-						<div className={styles.bg4} />
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle1}>Job position title</div>
-						<b className={styles.tomaszZastawny}>Rasheed Atanda</b>
-						<img className={styles.imgIcon2} alt="" src="../img12@2x.png" />
-					</div>
-					<div className={styles.div6}>
-						<div className={styles.bg4} />
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle1}>Job position title</div>
-						<b className={styles.tomaszZastawny}>Popsana Barida</b>
-						<img className={styles.imgIcon2} alt="" src="../img13@2x.png" />
-					</div>
-					<div className={styles.div}>
-						<div className={styles.bg4} />
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle1}>Job position title</div>
-						<b className={styles.tomaszZastawny}>Uk Chukundah</b>
-						<img className={styles.imgIcon2} alt="" src="../img14@2x.png" />
-					</div>
-					<div className={styles.div8}>
-						<div className={styles.bg4} />
-						<b className={styles.pelumiSolaAremu}>Pelumi Sola-Aremu</b>
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle9}>Job position title</div>
-						<img className={styles.imgIcon2} alt="" src="../img15@2x.png" />
-					</div>
-					<div className={styles.div2}>
-						<div className={styles.bg4} />
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle1}>Job position title</div>
-						<b className={styles.tomaszZastawny}>Ridwan Otun</b>
-						<img className={styles.imgIcon2} alt="" src="../img16@2x.png" />
-					</div>
-					<b className={styles.product1}>Engineering</b>
-				</div>
-				<div className={styles.management}>
-					<div className={styles.div1}>
-						<div className={styles.bg4} />
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle1}>Job position title</div>
-						<b className={styles.tomaszZastawny}>Justin Ziegler</b>
-						<img className={styles.imgIcon2} alt="" src="../img17@2x.png" />
-					</div>
-					<div className={styles.div2}>
-						<div className={styles.bg4} />
-						<img
-							className={styles.linkedinIcon1}
-							alt=""
-							src="../linkedin.svg"
-						/>
-						<div className={styles.jobPositionTitle1}>Job position title</div>
-						<b className={styles.tomaszZastawny}>Ife Johnson</b>
-						<img className={styles.imgIcon2} alt="" src="../img18@2x.png" />
-					</div>
-					<b className={styles.product1}>Management</b>
-				</div>
-				<div className={styles.loremIpsumDolorSitAmetCo4}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-					dolor sit amet, consectetur adipiscing elit.
-				</div>
-				<b className={styles.ourTeam1}>Our team</b>
-			</div>
+				<Typography variant="h5" fontWeight={700} gutterBottom>
+					Engineering
+				</Typography>
+				<Grid container>
+					{teamMembers.engineering.map((member) => (
+						<Grid key={member.name} item sm={12} md={4}>
+							<Idcard data={member} />
+						</Grid>
+					))}
+				</Grid>
+				<Typography variant="h5" fontWeight={700} gutterBottom>
+					Product
+				</Typography>
+				<Grid container>
+					{teamMembers.product.map((member) => (
+						<Grid key={member.name} item sm={12} md={4}>
+							<Idcard data={member} />
+						</Grid>
+					))}
+				</Grid>
+				<Typography variant="h5" fontWeight={700} gutterBottom>
+					Treasury Ops
+				</Typography>
+				<Grid container>
+					{teamMembers.treasury.map((member) => (
+						<Grid key={member.name} item xs={12} sm={6} md={4}>
+							<Idcard data={member} />
+						</Grid>
+					))}
+				</Grid>
+			</Stack>
 
 			<ImageDataSplit data={splitDataContent[0]} />
 		</Stack>
