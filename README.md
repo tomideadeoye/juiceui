@@ -1,10 +1,10 @@
 
-  # juiceui
+  # Juice UI by Tomide Adeoye
 
-  Note: Please ensure you have installed <code><a href="https://nodejs.org/en/download/">node js</a></code>
+Everything you need for reliable global payments
 
-  To preview and run the project on your device:
-  1) Open project folder in <a href="https://code.visualstudio.com/download">Visual Studio Code</a>
-  2) In the terminal, run `npm install`
-  3) Run `npm start` to view project in browser
-  
+
+https://user-images.githubusercontent.com/55337742/211080250-419b92a5-7ef0-423a-be4a-2e0658dca314.mov
+
+
+
