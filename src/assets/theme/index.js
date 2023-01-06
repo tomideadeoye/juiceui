@@ -62,6 +62,10 @@ export default createTheme({
 		white: {
 			main: "#fff",
 		},
+
+		green: {
+			100: "#e8fdec",
+		},
 		background: {
 			default: "#f8f8f8",
 		},

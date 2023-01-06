@@ -1,75 +1,24 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import React from "react";
 
 import { makeStyles } from "@mui/styles";
+import JuiceAccordion from "../components/muiAccordion";
+import theme from "../assets/theme";
 
-const useStyles = makeStyles(() => ({}));
+const useStyles = makeStyles(() => ({
+	container: {
+		padding: theme.spacing(2, 5),
+		[theme.breakpoints.down("md")]: {
+			padding: theme.spacing(2, 3),
+		},
+		backgroundColor: theme.palette.green[100],
+	},
+}));
 
 const ContactUs = () => {
 	const styles = useStyles();
-	const navigate = useNavigate();
-
-	const onGuidanceTextClick = useCallback(() => {
-		const anchor = document.querySelector("[data-scroll-to='bg1']");
-		if (anchor) {
-			anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-		}
-	}, []);
-
-	const onUseCasesTextClick = useCallback(() => {
-		const anchor = document.querySelector(
-			"[data-scroll-to='paymentSolutionsFor']"
-		);
-		if (anchor) {
-			anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-		}
-	}, []);
-
-	const onBenefitsTextClick = useCallback(() => {
-		const anchor = document.querySelector("[data-scroll-to='benefitsText']");
-		if (anchor) {
-			anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-		}
-	}, []);
-
-	const onDocumentationTextClick = useCallback(() => {
-		navigate("/");
-	}, [navigate]);
-
-	const onButtonsBigSecondaryContainerClick = useCallback(() => {
-		navigate("/contact-us");
-	}, [navigate]);
 
 	return (
-		<div className={styles.contactUs}>
-			<div className={styles.header}>
-				<img className={styles.headerChild} alt="" src="../group-1341.svg" />
-				<div className={styles.sections}>
-					<div className={styles.guidance} onClick={onGuidanceTextClick}>
-						Guidance
-					</div>
-					<div className={styles.useCases} onClick={onUseCasesTextClick}>
-						Use cases
-					</div>
-					<div className={styles.benefits} onClick={onBenefitsTextClick}>
-						Benefits
-					</div>
-					<div className={styles.documentationWrapper}>
-						<div
-							className={styles.documentation}
-							onClick={onDocumentationTextClick}
-						>
-							Documentation
-						</div>
-					</div>
-				</div>
-				<div className={styles.buttons}>
-					<div className={styles.buttonsmediumsecondary}>
-						<b className={styles.submit}>Contact us</b>
-					</div>
-				</div>
-			</div>
+		<div className={styles.container}>
 			<div className={styles.topParent}>
 				<div className={styles.top}>
 					<div className={styles.groupParent}>
@@ -181,61 +130,7 @@ const ContactUs = () => {
 						</div>
 					</div>
 				</div>
-				<div className={styles.paymentSolutionsForDiverse}>
-					<div className={styles.discoverHowWeHelpSomeOfAParent}>
-						<div className={styles.discoverHowWeHelpSomeOfA}>
-							Discover how we help some of Africa’s leading businesses
-						</div>
-						<b className={styles.paymentSolutionsForDiverse1}>
-							Payment solutions for diverse use cases
-						</b>
-					</div>
-					<div className={styles.useCasesParent}>
-						<div className={styles.useCases1}>
-							<b className={styles.operatingBusinesses}>Operating businesses</b>
-							<img
-								className={styles.buttonsicon}
-								alt=""
-								src="../buttonsicon3.svg"
-							/>
-						</div>
-						<div className={styles.div}>
-							<div className={styles.financeManagersParent}>
-								<b className={styles.financeManagers}>Finance managers</b>
-								<img
-									className={styles.buttonsicon1}
-									alt=""
-									src="../buttonsicon4.svg"
-								/>
-							</div>
-						</div>
-						<div className={styles.div}>
-							<div className={styles.financeManagersParent}>
-								<b className={styles.financeManagers}>BDCs and IMTOs</b>
-								<img
-									className={styles.buttonsicon1}
-									alt=""
-									src="../buttonsicon4.svg"
-								/>
-							</div>
-						</div>
-						<div className={styles.div2}>
-							<div className={styles.notSureIfYoureAGoodMatcWrapper}>
-								<b className={styles.notSureIfYoureAGoodMatc}></b>
-							</div>
-							<div className={styles.wantUsToTakeACloserLookParent}>
-								<div className={styles.wantUsToTakeACloserLook}></div>
-								<div
-									className={styles.buttonsbigsecondary}
-									onClick={onButtonsBigSecondaryContainerClick}
-								>
-									<div className={styles.buttonsbigprimarylabelChild} />
-									<b className={styles.cancel}>Contact us</b>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<JuiceAccordion />
 			</div>
 		</div>
 	);
