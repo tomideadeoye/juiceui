@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import React from "react";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import AnimatedCursor from "react-animated-cursor";
 // import { Box } from "@mui/material";
 
 function App() {
@@ -89,6 +90,14 @@ function App() {
 	return (
 		<>
 			<Header />
+			<AnimatedCursor
+				innerSize={15}
+				outerSize={15}
+				color="124, 116, 233"
+				outerAlpha={0.4}
+				innerScale={0.7}
+				outerScale={5}
+			/>
 			<Routes>
 				<Route path="/" element={<Main />} />
 

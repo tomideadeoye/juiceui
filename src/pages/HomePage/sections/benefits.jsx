@@ -9,10 +9,6 @@ const useStyles = makeStyles((theme) => ({
 		width: "100%",
 		fontFamily: theme.typography.fontFamily,
 		padding: theme.spacing(3, 0),
-		// select second child
-		// "& > *:nth-child(2)": {
-		// 	fontSize: theme.typography.fontSize,
-		// },
 	},
 	goodMatchSection: {
 		background: theme.palette.white.main,

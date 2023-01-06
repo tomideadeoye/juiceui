@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import ContactButton from "../../../components/juiceButton";
@@ -44,13 +44,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function HeroSection() {
+	const mediumScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
+
 	const styles = useStyles();
 
 	return (
 		<Stack className={styles.container} spacing={4}>
 			<b className={styles.everythingYouNeedForReliab}></b>
 			<Typography
-				variant="h2"
+				variant={mediumScreen ? "h4" : "h2"}
 				fontWeight="550"
 				maxWidth={{ xs: "100%", md: "70%" }}
 			>
@@ -66,7 +68,8 @@ export default function HeroSection() {
 				less complex, more reliable and compliant than ever before.
 			</Typography>
 
-			<ContactButton color="primary" link="/contact-us" label="Contact Us" />
+			<ContactButton label="Contact Us" link="/contact-us" color="primary" />
+
 			<div className={styles.credentials}>
 				<img className={styles.juiceUsers} alt="" src="../group-82.svg" />
 				<Box className={styles.diverseIndustryLeadersTrust} mt={2}></Box>

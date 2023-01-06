@@ -9,11 +9,16 @@ import ListItemText from "@mui/material/ListItemText";
 import { useMediaQuery } from "@mui/material";
 import theme from "../assets/theme";
 import MenuIcon from "@mui/icons-material/Menu";
+import { appData } from "../appTextData";
 
 export default function MUIDrawer() {
 	const [state, setState] = React.useState({
 		right: false,
 	});
+
+	const handleClick = React.useCallback((text) => {
+		window.location.href = text;
+	}, []);
 
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
@@ -26,6 +31,11 @@ export default function MUIDrawer() {
 		setState({ ...state, [anchor]: open });
 	};
 
+	const spaRoutesObj = {
+		Documentation: appData.documentation,
+		"Contact us": "/contact-us",
+	};
+
 	const list = (anchor) => (
 		<Box
 			sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
@@ -34,16 +44,10 @@ export default function MUIDrawer() {
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
 			<List>
-				{[
-					"Documentation",
-					"Benefits",
-					"Use cases",
-					"Guidance",
-					"Contact us",
-				].map((text) => (
+				{["Documentation", "Contact us"].map((text) => (
 					<>
 						<ListItem key={text} disablePadding>
-							<ListItemButton>
+							<ListItemButton onClick={() => handleClick(spaRoutesObj[text])}>
 								<ListItemText primary={text} />
 							</ListItemButton>
 						</ListItem>
@@ -60,10 +64,7 @@ export default function MUIDrawer() {
 		<div>
 			{["right"].map((anchor) => (
 				<React.Fragment key={anchor}>
-					{
-						// if the screen is small, show the drawer button
-						match && <MenuIcon onClick={toggleDrawer("right", true)} />
-					}
+					{match && <MenuIcon onClick={toggleDrawer("right", true)} />}
 
 					<Drawer
 						anchor={anchor}

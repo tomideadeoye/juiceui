@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
 			justifyContent: "center",
 			gap: theme.spacing(2),
 		},
+		"& > a": {
+			textDecoration: "none",
+		},
 	},
 
 	juiceAfricaAllRightsReserParent: {
@@ -111,12 +114,20 @@ export default function Footer() {
 					md={3}
 					className={styles.resourcesParent}
 				>
-					<Stack>
+					<Stack
+						sx={{
+							"& > a": {
+								textDecoration: "none",
+								color: "inherit",
+							},
+						}}
+					>
 						<b className={styles.resources}>{item.title}</b>
 						{item.items.map((item, index) => (
 							<Typography
 								className={styles.routes}
-								onClick={() => navigate(item.link)}
+								component="a"
+								href={item.link}
 								key={index}
 								variant="body1"
 								fontWeight="300"

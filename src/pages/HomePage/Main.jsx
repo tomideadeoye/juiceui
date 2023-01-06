@@ -8,7 +8,11 @@ import ImageDataSplit from "./sections/imageDataSplit";
 import BenefitsSection from "./sections/benefits";
 import BragSection2 from "./sections/bragSection2";
 import JuiceAccordion from "../../components/muiAccordion";
-import { PageTransition } from "../../components/animations";
+import {
+	AnimationMakerScroll,
+	PageTransition,
+} from "../../components/animations";
+import { splitDataContent } from "../../appTextData";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -72,41 +76,6 @@ const Main = () => {
 		},
 	];
 
-	const splitDataContent = [
-		{
-			title: "Higher levels of operational efficiency with our API suite",
-			description:
-				"Juice is an ecosystem of services making business cross border payment less complex, more reliable and compliant than ever before.",
-			iterable: [
-				"Thousand of successful payouts",
-				"Compliance & risk experts",
-				"Round the clock support",
-			],
-			imgLocation: "../img3@2x.png",
-			button: {
-				link: "https://docs.spendjuice.org/docs",
-				item: "Documentation",
-				image: "../icons24externallink.svg",
-			},
-		},
-		{
-			title: "All the guidance you’ll need",
-			description:
-				"Our team of experts provide guidance from inquiry to integration and beyond. Get personalized recommendations for your business use case.",
-			iterable: [
-				"Extensive integration support",
-				"Compliance & risk experts",
-				"Dedicated product usecase workshop",
-			],
-			imgLocation: "../img4@2x.png",
-			button: {
-				link: "/contact-us",
-				item: "Contact us",
-				image: "../icons24externallink.svg",
-			},
-		},
-	];
-
 	return (
 		<PageTransition>
 			<Stack className={styles.container}>
@@ -156,7 +125,6 @@ const Main = () => {
 						<Typography variant="h5" fontWeight="bold">
 							You’re in control
 						</Typography>
-
 						<Grid container justifyContent="space-between" alignItems="center">
 							<Grid item sm={12} lg={6}>
 								<Typography variant="body1" fontWeight="300" lineHeight="32px">
@@ -177,13 +145,15 @@ const Main = () => {
 								</Typography>
 							</Grid>
 						</Grid>
-						<Box
-							src="../img1@2x.png"
-							alt="Juice Dashboard"
-							className={styles.imgIcon1}
-							component="img"
-							width="100%"
-						/>
+						<AnimationMakerScroll>
+							<Box
+								src="../img1@2x.png"
+								alt="Juice Dashboard"
+								className={styles.imgIcon1}
+								component="img"
+								width="100%"
+							/>{" "}
+						</AnimationMakerScroll>
 					</Stack>
 
 					<Stack
@@ -199,15 +169,21 @@ const Main = () => {
 
 					<ChargesSection />
 				</Stack>
-				<ImageDataSplit data={splitDataContent[0]} />
+				<Box data-scroll-to="documentation">
+					<ImageDataSplit data={splitDataContent[0]} />
+				</Box>
 				<Stack className={styles.acceptProcessPaymentsSection}>
 					<BenefitsSection />
 				</Stack>
 				<Stack className={styles.acceptProcessPaymentsSection}>
 					<BragSection2 />
-					<JuiceAccordion />
+					<Box data-scroll-to="usecases">
+						<JuiceAccordion />
+					</Box>
 				</Stack>
-				<ImageDataSplit data={splitDataContent[1]} />{" "}
+				<Box data-scroll-to="guidance">
+					<ImageDataSplit data={splitDataContent[1]} />
+				</Box>
 			</Stack>
 		</PageTransition>
 	);

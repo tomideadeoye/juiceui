@@ -2,6 +2,7 @@ import { Box, Stack, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { appData } from "../appTextData";
 import MUIDrawer from "./drawer";
 import ContactButton from "./juiceButton";
 
@@ -22,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
 		left: 0,
 		zIndex: 100,
 		fontFamily: theme.typography.fontFamily,
+
+		[theme.breakpoints.down("sm")]: {
+			justifyContent: "space-between",
+		},
 	},
 	juiceLogo: {
 		width: 72,
@@ -43,16 +48,14 @@ export default function Header() {
 	const navigate = useNavigate();
 
 	const onGuidanceTextClick = useCallback(() => {
-		const anchor = document.querySelector("[data-scroll-to='bg1']");
+		const anchor = document.querySelector("[data-scroll-to='guidance']");
 		if (anchor) {
 			anchor.scrollIntoView({ block: "start", behavior: "smooth" });
 		}
 	}, []);
 
 	const onUseCasesTextClick = useCallback(() => {
-		const anchor = document.querySelector(
-			"[data-scroll-to='paymentSolutionsFor']"
-		);
+		const anchor = document.querySelector("[data-scroll-to='usecases']");
 		if (anchor) {
 			anchor.scrollIntoView({ block: "start", behavior: "smooth" });
 		}
@@ -60,13 +63,6 @@ export default function Header() {
 
 	const onBenefitsText1Click = useCallback(() => {
 		const anchor = document.querySelector("[data-scroll-to='benefitsText']");
-		if (anchor) {
-			anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-		}
-	}, []);
-
-	const onDocumentationTextClick = useCallback(() => {
-		const anchor = document.querySelector("[data-scroll-to='bg']");
 		if (anchor) {
 			anchor.scrollIntoView({ block: "start", behavior: "smooth" });
 		}
@@ -91,7 +87,18 @@ export default function Header() {
 						direction="row"
 						justifyContent="space-between"
 					>
-						<div onClick={onDocumentationTextClick}>Documentation</div>
+						<Box
+							component="a"
+							href={appData.documentation}
+							target="_blank"
+							rel="noreferrer"
+							sx={{
+								textDecoration: "none",
+								color: "black",
+							}}
+						>
+							Documentation
+						</Box>
 						<div onClick={onBenefitsText1Click}>Benefits</div>
 						<div onClick={onUseCasesTextClick}>Use cases</div>
 						<div onClick={onGuidanceTextClick}>Guidance</div>
@@ -99,10 +106,11 @@ export default function Header() {
 					<ContactButton link="/contact-us" label="Contact us" />
 				</>
 			)}
-
-			<Box>
-				<MUIDrawer />
-			</Box>
+			{useMediaQuery((theme) => theme.breakpoints.down("sm")) && (
+				<Box>
+					<MUIDrawer />
+				</Box>
+			)}
 		</Box>
 	);
 }

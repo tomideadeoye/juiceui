@@ -28,6 +28,12 @@ const useStyles = makeStyles((theme) => ({
 			fontWeight: "bold",
 		},
 	},
+
+	image: {
+		[theme.breakpoints.down("lg")]: {
+			display: "none",
+		},
+	},
 }));
 
 export default function ImageDataSplit({ data }) {
@@ -50,9 +56,15 @@ export default function ImageDataSplit({ data }) {
 					return <Checkrizer key={item} content={item} />;
 				})}
 
-				<ContactButton color="white" link={button.link} label={button.item} />
+				<ContactButton
+					color="white"
+					link={button.link}
+					label={button.item}
+					extenal={button.extenal}
+				/>
 			</Stack>
 			<Box
+				className={styles.image}
 				component="img"
 				src={imgLocation}
 				sx={{

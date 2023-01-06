@@ -221,7 +221,7 @@ const AboutUs = () => {
 					</Typography>
 					<Grid container>
 						{teamMembers.management.map((member) => (
-							<Grid key={member.name} item sm={12} md={4}>
+							<Grid key={member.name} item sm={12} md={6} lg={4}>
 								<Idcard data={member} />
 							</Grid>
 						))}
@@ -232,7 +232,7 @@ const AboutUs = () => {
 					</Typography>
 					<Grid container>
 						{teamMembers.engineering.map((member) => (
-							<Grid key={member.name} item sm={12} md={4}>
+							<Grid key={member.name} item sm={12} md={6} lg={4}>
 								<Idcard data={member} />
 							</Grid>
 						))}
@@ -242,7 +242,7 @@ const AboutUs = () => {
 					</Typography>
 					<Grid container>
 						{teamMembers.product.map((member) => (
-							<Grid key={member.name} item sm={12} md={4}>
+							<Grid key={member.name} item sm={12} md={6} lg={4}>
 								<Idcard data={member} />
 							</Grid>
 						))}
@@ -252,7 +252,7 @@ const AboutUs = () => {
 					</Typography>
 					<Grid container>
 						{teamMembers.treasury.map((member) => (
-							<Grid key={member.name} item xs={12} sm={6} md={4}>
+							<Grid key={member.name} item xs={12} sm={6} md={6} lg={4}>
 								<Idcard data={member} />
 							</Grid>
 						))}

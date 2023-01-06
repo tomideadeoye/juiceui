@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
 	buttons: {
@@ -11,13 +12,10 @@ const useStyles = makeStyles((theme) => ({
 		padding: "10px 35px",
 		cursor: "pointer",
 
-		"& > a": {
-			textDecoration: "none",
-			color: theme.palette.grey[700],
-		},
 		"&:hover": {
 			backgroundColor: theme.palette.grey[800],
 			color: theme.palette.white.main,
+			boxShadow: "0px 0px 10px 0px grey",
 		},
 	},
 	dark: {
@@ -28,17 +26,12 @@ const useStyles = makeStyles((theme) => ({
 		color: theme.palette.white.main,
 		width: "fit-content",
 		cursor: "pointer",
-		"& > a": {
-			color: theme.palette.white.main,
-			textDecoration: "none",
-			"&:hover": {
-				backgroundColor: theme.palette.primary.dark,
-				color: theme.palette.white.main,
-			},
-		},
+		textDecoration: "none",
 
 		"&:hover": {
 			backgroundColor: theme.palette.primary.dark,
+			color: theme.palette.white.main,
+			boxShadow: "0px 0px 10px 0px grey",
 		},
 	},
 
@@ -52,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
 		fontWeight: theme.typography.fontWeightBold,
 		"& > a": {
 			color: theme.palette.grey[700],
-			textDecoration: "underline",
 		},
 		fontFamily: theme.typography.fontFamily,
 
@@ -67,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function ContactButton({ color, link, label }) {
+export default function ContactButton({ color, label, link }) {
 	const styles = useStyles();
 
 	function colorHandler() {
@@ -80,8 +72,38 @@ export default function ContactButton({ color, link, label }) {
 	}
 
 	return (
-		<Stack className={colorHandler()} direction="row" spacing={1}>
-			<a href={link}>{label}</a>
-		</Stack>
+		<>
+			{external ? (
+				<Box
+					href={link}
+					component="a"
+					sx={{
+						textDecoration: "none",
+						color: "inherit",
+					}}
+
+					// style={{ textDecoration: "none", color: "inherit" }}
+				>
+					<Stack className={colorHandler()} direction="row" spacing={1}>
+						{label}
+					</Stack>
+				</Box>
+			) : (
+				<Box
+					to={link ? link : "/contact-us"}
+					component={Link}
+					sx={{
+						textDecoration: "none",
+						color: "inherit",
+					}}
+
+					// style={{ textDecoration: "none", color: "inherit" }}
+				>
+					<Stack className={colorHandler()} direction="row" spacing={1}>
+						{label}
+					</Stack>
+				</Box>
+			)}
+		</>
 	);
 }
