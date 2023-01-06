@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { makeStyles } from "@mui/styles";
 
@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(4, 4),
 		fontFamily: theme.typography.fontFamily,
 		textAlign: "justify",
+		alignItems: "center",
 	},
 	heading: {
 		fontSize: theme.typography.h5.fontSize,
@@ -20,6 +21,9 @@ const TermsConditions = () => {
 
 	return (
 		<Stack className={styles.container}>
+			<Typography mb={4} variant="h3" fontWeight="normal">
+				Terms & conditions
+			</Typography>
 			Please read these Terms of Service (“Terms”), which set forth the legally
 			binding terms and conditions between you and Juiice Inc (‘the Company’ or
 			‘Juice Track’ or ‘we’ ‘our’ or ‘us’). It governs your access to and the
