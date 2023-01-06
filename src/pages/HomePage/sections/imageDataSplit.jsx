@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(4, 3, 2, 5),
 		lineHeight: "32px",
 
+		[theme.breakpoints.down("sm")]: {
+			padding: theme.spacing(4, 3, 2, 3),
+		},
+
 		"& > *:first-child": {
 			// fontSize: theme.typography.h4.fontSize,
 			fontWeight: "bold",
@@ -32,7 +36,7 @@ export default function ImageDataSplit({ data }) {
 	const { title, description, iterable, imgLocation, button } = data;
 
 	return (
-		<Stack direction="row" className={styles.container}>
+		<Stack direction={{ sm: "column", md: "row" }} className={styles.container}>
 			<Stack className={styles.mainData} spacing={4}>
 				<Typography variant="h4" fontWeight="bold">
 					{title}

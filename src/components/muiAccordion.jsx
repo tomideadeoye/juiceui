@@ -72,7 +72,9 @@ export default function JuiceAccordion() {
 								</Typography>
 							</AccordionSummary>
 							<AccordionDetails>
-								<Typography>{item.description}</Typography>
+								<Typography variant="body1" fontWeight={200}>
+									{item.description}
+								</Typography>
 							</AccordionDetails>
 						</Accordion>
 					);

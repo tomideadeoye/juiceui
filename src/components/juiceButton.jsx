@@ -11,9 +11,14 @@ const useStyles = makeStyles((theme) => ({
 		width: "136px",
 		padding: "10px 20px",
 		cursor: "pointer",
+
+		"& > a": {
+			textDecoration: "none",
+			color: theme.palette.grey[700],
+		},
 		"&:hover": {
-			backgroundColor: theme.palette.primary.main,
-			color: theme.palette.primary.light,
+			backgroundColor: theme.palette.grey[800],
+			color: theme.palette.white.main,
 		},
 	},
 	dark: {
@@ -27,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
 		"& > a": {
 			color: theme.palette.white.main,
 			textDecoration: "none",
+			"&:hover": {
+				backgroundColor: theme.palette.primary.dark,
+				color: theme.palette.white.main,
+			},
 		},
 
 		"&:hover": {
