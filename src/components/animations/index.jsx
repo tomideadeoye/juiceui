@@ -117,13 +117,13 @@ export const AnimationMakerCards = ({ children }) => {
 				scale: 1.2,
 			}}
 			whileTap={{ scale: 0.8 }}
-			// transition={{
-			// 	duration: 2,
-			// 	ease: "easeInOut",
-			// 	times: [0, 0.2, 0.5, 0.8, 1],
-			// 	// repeat: Infinity,
-			// 	// repeatDelay: 1,
-			// }}
+			transition={{
+				duration: 1,
+				ease: "easeInOut",
+				times: [0, 0.2, 0.5, 0.8, 1],
+				// repeat: Infinity,
+				// repeatDelay: 1,
+			}}
 		>
 			{children}
 		</motion.div>
