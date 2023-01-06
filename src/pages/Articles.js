@@ -58,10 +58,34 @@ const Articles = () => {
 				what you need and we will get back to you as soon as possible.
 			</Typography>
 			<Stack direction="row" spacing={3}>
-				<Chip label="Payments" color="primary" />
-				<Chip label="Fintech" color="primary" />
-				<Chip label="Africa" color="primary" />
-				<Chip label="Stable Coins" color="primary" />
+				<Chip
+					label="Payments"
+					color="primary"
+					sx={{
+						backgroundColor: "#7c74e9",
+					}}
+				/>
+				<Chip
+					label="Fintech"
+					color="primary"
+					sx={{
+						backgroundColor: "#7c74e9",
+					}}
+				/>
+				<Chip
+					label="Africa"
+					color="primary"
+					sx={{
+						backgroundColor: "#7c74e9",
+					}}
+				/>
+				<Chip
+					label="Stable Coins"
+					color="primary"
+					sx={{
+						backgroundColor: "#7c74e9",
+					}}
+				/>
 			</Stack>
 
 			<TextField
@@ -85,9 +109,10 @@ const Articles = () => {
 							>
 								<Stack
 									spacing={3}
-									sx={{
-										padding: { sm: "1rem", md: "2rem" },
-									}}
+									padding={3}
+									// sx={{
+									// 	padding: { sm: "1rem", md: "2rem" },
+									// }}
 								>
 									<Typography
 										variant="body1"
@@ -98,8 +123,13 @@ const Articles = () => {
 										{item.title}
 									</Typography>
 									<Stack direction="row" spacing={3}>
-										<Chip label="Category" color="primary" />
-										<Chip label="Category" variant="outlined" color="warning" />
+										<Chip
+											label="Payments"
+											color="primary"
+											sx={{
+												backgroundColor: "#7c74e9",
+											}}
+										/>
 									</Stack>
 								</Stack>
 								<img

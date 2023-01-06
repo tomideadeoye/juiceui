@@ -33,7 +33,10 @@ export default function MUIDrawer() {
 
 	const spaRoutesObj = {
 		Documentation: appData.documentation,
+		"About us": "/about-us",
 		"Contact us": "/contact-us",
+		"Terms & Conditions": "/terms-conditions",
+		Articles: "/articles",
 	};
 
 	const list = (anchor) => (
@@ -44,7 +47,13 @@ export default function MUIDrawer() {
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
 			<List>
-				{["Documentation", "Contact us"].map((text) => (
+				{[
+					"Documentation",
+					"About us",
+					"Contact us",
+					"Terms & Conditions",
+					"Articles",
+				].map((text) => (
 					<>
 						<ListItem key={text} disablePadding>
 							<ListItemButton onClick={() => handleClick(spaRoutesObj[text])}>
