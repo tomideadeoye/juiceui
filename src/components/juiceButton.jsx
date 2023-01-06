@@ -8,8 +8,7 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: "center",
 		borderRadius: theme.borderRadius.md,
 		border: `1px solid ${theme.palette.grey[700]}`,
-		width: "136px",
-		padding: "10px 20px",
+		padding: "10px 35px",
 		cursor: "pointer",
 
 		"& > a": {

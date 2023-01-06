@@ -3,6 +3,7 @@ import React from "react";
 import { makeStyles } from "@mui/styles";
 import JuiceAccordion from "../components/muiAccordion";
 import theme from "../assets/theme";
+import { Stack, Typography } from "@mui/material";
 
 const useStyles = makeStyles(() => ({
 	container: {
@@ -12,127 +13,115 @@ const useStyles = makeStyles(() => ({
 		},
 		backgroundColor: theme.palette.green[100],
 	},
+	form: {
+		borderRadius: theme.borderRadius.md,
+		backgroundColor: theme.palette.white.main,
+		width: "100%",
+		padding: theme.spacing(2, 2),
+	},
 }));
 
 const ContactUs = () => {
 	const styles = useStyles();
 
 	return (
-		<div className={styles.container}>
-			<div className={styles.topParent}>
-				<div className={styles.top}>
-					<div className={styles.groupParent}>
-						<div className={styles.credentialsParent}>
-							<div className={styles.credentials}>
-								<div className={styles.diverseIndustryLeadersUseJ}>
-									Diverse industry leaders use Juice
-								</div>
-								<img
-									className={styles.credentialsChild}
-									alt=""
-									src="../group-821.svg"
-								/>
-								<img
-									className={styles.credentialsItem}
-									alt=""
-									src="../group-83.svg"
+		<Stack className={styles.container}>
+			<Stack
+				direction={{ xs: "column", md: "row" }}
+				justifyContent="space-between"
+			>
+				<Stack spacing={2}>
+					<Typography variant="h3" fontWeight={700} gutterBottom>
+						How can we help ?
+					</Typography>
+					<Typography
+						variant="body1"
+						fontWeight={300}
+						maxWidth={500}
+						lineHeight={2}
+					>
+						Making a general inquiry, or you’ll like us to talk in detail? Tell
+						us what you need and we will get back to you as soon as possible.
+					</Typography>
+					<img
+						className={styles.credentialsChild}
+						alt=""
+						src="../group-821.svg"
+						width={400}
+					/>
+					<img
+						className={styles.credentialsItem}
+						alt=""
+						src="../group-83.svg"
+						width={160}
+					/>
+					<Typography fontSize="10px" fontWeight={100} letterSpacing=".5px">
+						Diverse industry leaders use Juice
+					</Typography>
+				</Stack>
+				<Stack>
+					<Stack className={styles.form}>
+						<Stack
+							component="form"
+							onSubmit={(e) => this.handelSubmit(e)}
+							spacing={2}
+						>
+							<div className="form-group">
+								<input
+									type="text"
+									className="form-control"
+									id="exampleInputPassword1"
+									placeholder="First name (required)"
+									// defaultValue={this.state.name}
 								/>
 							</div>
-							<div className={styles.makingAGeneralInquiryOrY}>
-								Making a general inquiry, or you’ll like us to talk in detail?
-								Tell us what you need and we will get back to you as soon as
-								possible.
+							<div className="form-group">
+								<input
+									type="email"
+									className="form-control"
+									id="exampleInputEmail1"
+									placeholder="Last name (required)"
+									// defaultValue={this.state.email}
+								/>
 							</div>
-							<b className={styles.howCanWeHelp}>How can we help?</b>
-						</div>
-						<div className={styles.form}>
-							<div className={styles.bg} />
-							<div className={styles.buttonsbigprimarylabel}>
-								<div className={styles.buttonsbigprimarylabelChild} />
-								<b className={styles.submit1}>Submit</b>
+							<div className="form-check">
+								<input
+									type="text"
+									className="form-control"
+									id="exampleCheck1"
+									placeholder="Company (required)"
+									// defaultValue={this.state.city}
+								/>
 							</div>
-							<div className={styles.inputempty}>
-								<div className={styles.backgroundsinputactive}>
-									<div className={styles.bg1} />
-								</div>
-								<img
-									className={styles.iconRight}
-									alt=""
-									src="../iconright.svg"
+							<div className="form-check">
+								<input
+									type="text"
+									className="form-control"
+									id="exampleCheck1"
+									placeholder="Message (required)"
+									// defaultValue={this.state.city}
 								/>
-								<img
-									className={styles.iconLeft}
-									alt=""
-									src="../iconright.svg"
-								/>
-								<div className={styles.inputTitle}>First name (required)</div>
-								<div className={styles.suffix}>Suffix</div>
 							</div>
-							<div className={styles.inputempty1}>
-								<div className={styles.backgroundsinputactive}>
-									<div className={styles.bg1} />
-								</div>
-								<img
-									className={styles.iconRight}
-									alt=""
-									src="../iconright.svg"
+							<div className="form-check">
+								<input
+									type="text"
+									className="form-control"
+									id="exampleCheck1"
+									placeholder="Company email (required)"
+									// defaultValue={this.state.city}
 								/>
-								<img
-									className={styles.iconLeft}
-									alt=""
-									src="../iconright.svg"
-								/>
-								<div className={styles.inputTitle}>Last name (required)</div>
-								<div className={styles.suffix}>Suffix</div>
 							</div>
-							<div className={styles.inputempty2}>
-								<div className={styles.backgroundsinputactive}>
-									<div className={styles.bg1} />
-								</div>
-								<img
-									className={styles.iconRight}
-									alt=""
-									src="../iconright.svg"
-								/>
-								<img
-									className={styles.iconLeft}
-									alt=""
-									src="../iconright.svg"
-								/>
-								<div className={styles.inputTitle}>Company (required)</div>
-								<div className={styles.suffix}>Suffix</div>
-							</div>
-							<div className={styles.backgroundsinputactiveParent}>
-								<div className={styles.backgroundsinputactive}>
-									<div className={styles.bg1} />
-								</div>
-								<div className={styles.inputTitle3}>Message (required)</div>
-							</div>
-							<div className={styles.inputempty3}>
-								<div className={styles.backgroundsinputactive}>
-									<div className={styles.bg1} />
-								</div>
-								<img
-									className={styles.iconRight}
-									alt=""
-									src="../iconright.svg"
-								/>
-								<img
-									className={styles.iconLeft}
-									alt=""
-									src="../iconright.svg"
-								/>
-								<div className={styles.inputTitle}>
-									Company email (required)
-								</div>
-								<div className={styles.suffix}>Suffix</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<JuiceAccordion />
-			</div>
-		</div>
+							<br />
+							<button type="submit" className="btn btn-primary">
+								Submit
+							</button>
+						</Stack>
+					</Stack>
+				</Stack>
+			</Stack>
+
+			<JuiceAccordion />
+		</Stack>
 	);
 };
 
