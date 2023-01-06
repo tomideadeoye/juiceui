@@ -99,9 +99,15 @@ export default function Header() {
 						>
 							Documentation
 						</Box>
-						<div onClick={onBenefitsText1Click}>Benefits</div>
-						<div onClick={onUseCasesTextClick}>Use cases</div>
-						<div onClick={onGuidanceTextClick}>Guidance</div>
+						<Box component="a" onClick={onBenefitsText1Click}>
+							Benefits
+						</Box>
+						<Box component="a" onClick={onUseCasesTextClick}>
+							Use cases
+						</Box>
+						<Box component="a" onClick={onGuidanceTextClick}>
+							Guidance
+						</Box>
 					</Stack>
 					<ContactButton link="/contact-us" label="Contact us" />
 				</>
