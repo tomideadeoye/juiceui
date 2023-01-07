@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/juiceui/static/css/main.38868c96.css",
+    "main.js": "/juiceui/static/js/main.944454e6.js",
+    "index.html": "/juiceui/index.html",
+    "main.38868c96.css.map": "/juiceui/static/css/main.38868c96.css.map",
+    "main.944454e6.js.map": "/juiceui/static/js/main.944454e6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38868c96.css",
+    "static/js/main.944454e6.js"
+  ]
+}
