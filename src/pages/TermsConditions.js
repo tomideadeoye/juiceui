@@ -9,10 +9,15 @@ const useStyles = makeStyles((theme) => ({
 		fontFamily: theme.typography.fontFamily,
 		textAlign: "justify",
 		alignItems: "center",
+		[theme.breakpoints.down("md")]: {
+			padding: theme.spacing(4, 2),
+		},
 	},
 	heading: {
 		fontSize: theme.typography.h5.fontSize,
 		margin: theme.spacing(2, 0),
+		textAlign: "left",
+		alignSelf: "flex-start",
 	},
 }));
 
@@ -21,7 +26,7 @@ const TermsConditions = () => {
 
 	return (
 		<Stack className={styles.container}>
-			<Typography mb={4} variant="h3" fontWeight="normal">
+			<Typography mb={4} variant="h4" fontWeight="normal" textAlign="center">
 				Terms & conditions
 			</Typography>
 			Please read these Terms of Service (“Terms”), which set forth the legally
@@ -322,77 +327,83 @@ const TermsConditions = () => {
 			synchronized with Juice track, are left at your own risk and Juiice Inc
 			shall not be responsible for any loss or damage to any personal property
 			left in your shipment(s) or for loss or damage to any cargo, materials or
-			supplies carried on or in such shipment(s), whatever the cause. Links to
-			Other Websites The Platform may contain links to third-party websites or
-			services that are not owned or controlled by Juice Track. Juiice Inchas no
-			control over, and assumes no responsibility for the content, privacy
-			policies, or practices of any third-party websites or services. You
-			further acknowledge and agree that Juiice Incshall not be responsible or
-			liable, directly or indirectly, for any damage or loss caused or alleged
-			to be caused by or in connection with use of or reliance on any such
-			content, goods or services available on or through any such websites or
-			services. We strongly advise you to read the terms and conditions and
-			privacy policies of any third-party websites or services that you visit.
-			Termination We may terminate or suspend our Service to you immediately,
-			without prior notice or liability, for any reason whatsoever, including
-			without limitation if you breach these Terms. Upon termination, your right
-			to use the Platform and our Service will immediately cease. If you wish to
-			terminate your transaction, you may simply send an email to
-			info@Juiceafrica.com. Indemnity You agree to indemnify and hold harmless
-			Juice Track, its affiliates and subsidiaries, its officers, directors,
-			employees and agents, against all liabilities, costs, expenses, damages
-			and losses (including any direct, indirect or consequential losses, loss
-			of profit, loss of reputation and all interest penalties and legal and
-			other reasonable professional costs and expenses) suffered or incurred as
-			a result of: your fraudulent or illegal use of the Services or the
-			Platform; your negligence or any default by you of any of these Terms; any
-			inaccurate or incomplete information that you have knowingly provided to
-			us; you allowing any other person to access your account either with your
-			permission or as a result of your failure to keep your username and
-			password private; any claim made against you for actual or alleged
-			infringement of Juice Track’s Intellectual Property or any actual or
-			alleged infringement of a third party’s Intellectual Property arising out
-			of or in connection with our Services or your use of the Platform.
-			Limitation of Liability In no event shall Juice Track, its directors,
-			employees, partners, agents, suppliers, or affiliates, be liable for any
-			indirect, incidental, special, consequential or punitive damages,
-			including without limitation, loss of profits, data, use, goodwill, or
-			other intangible losses, resulting from: your use of the Platform or the
-			Services or your inability to use the Platform or the Services; any
-			conduct or content of any third party on the Platform; any unauthorised
-			access, use or alteration of your transmissions or content, whether based
-			on warranty, contract, tort (including negligence) or any other legal
-			theory, whether or not we have been informed of the possibility of such
-			damage, and even if a remedy set forth herein is found to have failed of
-			its essential purpose; any legal proceedings between the you and any third
-			parties. Disclaimer Your use of the Service is at your sole risk. The
-			Platform is provided on an “AS IS” and “AS AVAILABLE” basis. The Platform
-			is provided without warranties of any kind, whether express or implied,
-			including, but not limited to, implied warranties of merchantability,
-			fitness for a particular purpose, non-infringement or course of
-			performance. Juice Track, its subsidiaries, affiliates, and its licensors
-			do not warrant that a) the Platform will function uninterrupted, secure or
-			available at any particular time or location; b) any errors or defects
-			will be corrected; c) the Platform is free of viruses or other harmful
-			components; or d) the results of using the Platform will meet your
-			requirements. For the digital healthcheck report services provided by
-			Juice Track, Juiice Incshall not be responsible for any damage that occurs
-			to your shipment(s) where, after receiving a digital health report on your
-			shipment(s), such report is taken to an external Merchants for subsequent
-			tracking. Governing Law These Terms shall be governed and construed in
-			accordance with the laws of the Federal Republic of Nigeria, without
-			regard to its conflict of law provisions. Our failure to enforce any right
-			or provision of these Terms will not be considered a waiver of those
-			rights. If any provision of these Terms is held to be invalid or
-			unenforceable by a court, the remaining provisions of these Terms will
-			remain in effect. These Terms constitute the entire agreement between us
-			regarding our Service, and supersede and replace any prior agreements we
-			might have between us regarding the Service. Dispute Resolution Any
-			disputes arising under or in connection with the validity, interpretation
-			and performance of this Terms between you and Juiice Incor between Juiice
-			Incand any third party that cannot be resolved amicably by the parties
-			through negotiation within 30 (thirty) days shall be resolved by
-			Arbitration at the Lagos Court of Arbitration (LCA) before a single
+			supplies carried on or in such shipment(s), whatever the cause.
+			<Box className={styles.heading}> Links to Other Websites</Box>
+			The Platform may contain links to third-party websites or services that
+			are not owned or controlled by Juice Track. Juiice Inchas no control over,
+			and assumes no responsibility for the content, privacy policies, or
+			practices of any third-party websites or services. You further acknowledge
+			and agree that Juiice Incshall not be responsible or liable, directly or
+			indirectly, for any damage or loss caused or alleged to be caused by or in
+			connection with use of or reliance on any such content, goods or services
+			available on or through any such websites or services. We strongly advise
+			you to read the terms and conditions and privacy policies of any
+			third-party websites or services that you visit. Termination We may
+			terminate or suspend our Service to you immediately, without prior notice
+			or liability, for any reason whatsoever, including without limitation if
+			you breach these Terms. Upon termination, your right to use the Platform
+			and our Service will immediately cease. If you wish to terminate your
+			transaction, you may simply send an email to info@Juiceafrica.com.
+			<Box className={styles.heading}>Indemnity</Box>
+			You agree to indemnify and hold harmless Juice Track, its affiliates and
+			subsidiaries, its officers, directors, employees and agents, against all
+			liabilities, costs, expenses, damages and losses (including any direct,
+			indirect or consequential losses, loss of profit, loss of reputation and
+			all interest penalties and legal and other reasonable professional costs
+			and expenses) suffered or incurred as a result of: your fraudulent or
+			illegal use of the Services or the Platform; your negligence or any
+			default by you of any of these Terms; any inaccurate or incomplete
+			information that you have knowingly provided to us; you allowing any other
+			person to access your account either with your permission or as a result
+			of your failure to keep your username and password private; any claim made
+			against you for actual or alleged infringement of Juice Track’s
+			Intellectual Property or any actual or alleged infringement of a third
+			party’s Intellectual Property arising out of or in connection with our
+			Services or your use of the Platform.
+			<Box className={styles.heading}>Limitation of Liability</Box>
+			In no event shall Juice Track, its directors, employees, partners, agents,
+			suppliers, or affiliates, be liable for any indirect, incidental, special,
+			consequential or punitive damages, including without limitation, loss of
+			profits, data, use, goodwill, or other intangible losses, resulting from:
+			your use of the Platform or the Services or your inability to use the
+			Platform or the Services; any conduct or content of any third party on the
+			Platform; any unauthorised access, use or alteration of your transmissions
+			or content, whether based on warranty, contract, tort (including
+			negligence) or any other legal theory, whether or not we have been
+			informed of the possibility of such damage, and even if a remedy set forth
+			herein is found to have failed of its essential purpose; any legal
+			proceedings between the you and any third parties.
+			<Box className={styles.heading}>Disclaimer</Box>
+			Your use of the Service is at your sole risk. The Platform is provided on
+			an “AS IS” and “AS AVAILABLE” basis. The Platform is provided without
+			warranties of any kind, whether express or implied, including, but not
+			limited to, implied warranties of merchantability, fitness for a
+			particular purpose, non-infringement or course of performance. Juice
+			Track, its subsidiaries, affiliates, and its licensors do not warrant that
+			a) the Platform will function uninterrupted, secure or available at any
+			particular time or location; b) any errors or defects will be corrected;
+			c) the Platform is free of viruses or other harmful components; or d) the
+			results of using the Platform will meet your requirements. For the digital
+			healthcheck report services provided by Juice Track, Juiice Incshall not
+			be responsible for any damage that occurs to your shipment(s) where, after
+			receiving a digital health report on your shipment(s), such report is
+			taken to an external Merchants for subsequent tracking.
+			<Box className={styles.heading}>Governing Law </Box>
+			These Terms shall be governed and construed in accordance with the laws of
+			the Federal Republic of Nigeria, without regard to its conflict of law
+			provisions. Our failure to enforce any right or provision of these Terms
+			will not be considered a waiver of those rights. If any provision of these
+			Terms is held to be invalid or unenforceable by a court, the remaining
+			provisions of these Terms will remain in effect. These Terms constitute
+			the entire agreement between us regarding our Service, and supersede and
+			replace any prior agreements we might have between us regarding the
+			Service.
+			<Box className={styles.heading}>Dispute Resolution</Box>
+			Any disputes arising under or in connection with the validity,
+			interpretation and performance of this Terms between you and Juiice Incor
+			between Juiice Incand any third party that cannot be resolved amicably by
+			the parties through negotiation within 30 (thirty) days shall be resolved
+			by Arbitration at the Lagos Court of Arbitration (LCA) before a single
 			arbitrator in accordance with the Arbitration and Conciliation Act, Cap
 			A18, Laws of the Federation of Nigeria. The Parties shall endeavour in
 			good faith to mutually agree on the selection of an arbitrator. If the
@@ -403,25 +414,29 @@ const TermsConditions = () => {
 			and to provide, in writing the reasoning for the award. The decision of
 			any such arbitrator shall be final and binding on the parties. Each party
 			shall bear its cost in connection with the Arbitration and the
-			arbitrator’s fees shall be split equally between both parties. Force
-			Majeure Juiice Inc shall not be liable for failure to perform, or for
-			delay in performing its obligations hereunder if such failure or delay
-			shall be due to natural disasters, war, riot, civil commotion, weather,
-			pandemics, epidemics, labour disputes, failure of sub-contractors or any
-			other cause beyond its reasonable control and whether or not of a similar
-			nature to the foregoing. Feedback We welcome and encourage you to provide
-			feedback, comments and suggestions for improvements to Juice Track’s
-			Platform or Services. You may submit your feedback by emailing us at
-			info@Juicetrack.org. Any feedback you submit to us will be considered
-			non-confidential and non-proprietary to you. By submitting your feedback
-			to us, you grant us a non-exclusive, worldwide, royalty-free, irrevocable,
-			sub-licensable, perpetual license to use and publish those ideas and
-			materials for any purpose, without compensation to you. Changes to Terms &
-			Conditions Juiice Inc reserves the right, in its sole discretion, to
-			change the Terms of Service. Juiice Inc encourages you to periodically
-			review the Terms to stay informed of our updates. Contact Us If you have
-			any questions about these Terms, please contact us at info@Juicetrack.org.
-			This document was last updated on 1st June, 2022.
+			arbitrator’s fees shall be split equally between both parties.
+			<Box className={styles.heading}>Force Majeure</Box>
+			Juiice Inc shall not be liable for failure to perform, or for delay in
+			performing its obligations hereunder if such failure or delay shall be due
+			to natural disasters, war, riot, civil commotion, weather, pandemics,
+			epidemics, labour disputes, failure of sub-contractors or any other cause
+			beyond its reasonable control and whether or not of a similar nature to
+			the foregoing.
+			<Box className={styles.heading}>Feedback</Box>
+			We welcome and encourage you to provide feedback, comments and suggestions
+			for improvements to Juice Track’s Platform or Services. You may submit
+			your feedback by emailing us at info@Juicetrack.org. Any feedback you
+			submit to us will be considered non-confidential and non-proprietary to
+			you. By submitting your feedback to us, you grant us a non-exclusive,
+			worldwide, royalty-free, irrevocable, sub-licensable, perpetual license to
+			use and publish those ideas and materials for any purpose, without
+			compensation to you. Changes to Terms & Conditions Juiice Inc reserves the
+			right, in its sole discretion, to change the Terms of Service. Juiice Inc
+			encourages you to periodically review the Terms to stay informed of our
+			updates.
+			<Box className={styles.heading}>Contact Us </Box>
+			If you have any questions about these Terms, please contact us at
+			info@Juicetrack.org. This document was last updated on 1st June, 2022.
 		</Stack>
 	);
 };
