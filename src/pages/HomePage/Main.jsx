@@ -2,7 +2,7 @@ import React from "react";
 import HeroSection from "./sections/heroSection";
 import Benefits from "../../components/benefits";
 import { makeStyles } from "@mui/styles";
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import ChargesSection from "./sections/chargesSection";
 import ImageDataSplit from "./sections/imageDataSplit";
 import BenefitsSection from "./sections/benefits";
@@ -57,6 +57,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	controlTextBox: {
 		padding: theme.spacing(2, 4, 0, 3),
+		[theme.breakpoints.down("sm")]: {
+			padding: theme.spacing(2, 1, 0, 1),
+		},
 	},
 }));
 
@@ -88,41 +91,37 @@ const Main = () => {
 						Accept and process payments in a secure and scalable way
 					</Typography>
 
-					<Grid
-						container
-						spacing={2}
+					<Stack
 						className={styles.speedySettlementsSection}
+						direction={{ sm: "column", md: "row" }}
 					>
-						<Grid item sm={12} md={6}>
-							<Stack spacing={2}>
-								<Typography variant="h5" fontWeight="bold">
-									Speedy settlements
-								</Typography>
-								<Typography
-									variant="body1"
-									fontWeight="300"
-									lineHeight="32px"
-									maxWidth="400px"
-								>
-									Legacy payments take up to 4 business days to settle. With
-									Juice’s rapid payment system, payments settle in only a couple
-									of hours. Save time and effort with effective scheme
-									management, and timely settlement.
-								</Typography>
-							</Stack>
-						</Grid>
-						<Grid item sm={12} md={6}>
-							<Box
-								sx={{
-									backgroundImage: `url(../img2@2x.png)`,
-									backgroundRepeat: "no-repeat",
-									backgroundSize: "cover",
-									height: "100%",
-									width: "100%",
-								}}
-							/>
-						</Grid>
-					</Grid>
+						<Stack spacing={2}>
+							<Typography variant="h5" fontWeight="bold">
+								Speedy settlements
+							</Typography>
+							<Typography
+								variant="body1"
+								fontWeight="300"
+								lineHeight="32px"
+								maxWidth="400px"
+							>
+								Legacy payments take up to 4 business days to settle. With
+								Juice’s rapid payment system, payments settle in only a couple
+								of hours. Save time and effort with effective scheme management,
+								and timely settlement.
+							</Typography>
+						</Stack>
+
+						<Box
+							sx={{
+								backgroundImage: `url(../img2@2x.png)`,
+								backgroundRepeat: "no-repeat",
+								backgroundSize: "cover",
+								// height: "100px",
+								width: "70%",
+							}}
+						/>
+					</Stack>
 					{/* YOUR ARE IN CONTROL SECTION */}
 					<Stack className={styles.youAreInControl} spacing={3}>
 						<Stack spacing={3} className={styles.controlTextBox}>
@@ -146,7 +145,6 @@ const Main = () => {
 									variant="body1"
 									fontWeight="300"
 									lineHeight="32px"
-									textAlign="justify"
 									maxWidth={{ xs: "100%", sm: "400px" }}
 								>
 									With both top-level and indepth transaction history view on
@@ -156,16 +154,6 @@ const Main = () => {
 							</Stack>
 						</Stack>
 
-						{/* <Grid
-							container
-							justifyContent="space-around"
-							alignItems="left"
-							columnSpacing={2}
-							padding={4}
-						>
-							<Grid item sm={12} lg={6}></Grid>
-							<Grid item sm={12} lg={6}></Grid>
-						</Grid> */}
 						<AnimationMakerScroll>
 							<Box
 								src="../img1@2x.png"

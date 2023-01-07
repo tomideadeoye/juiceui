@@ -6,15 +6,20 @@ import ContactButton from "../../../components/juiceButton";
 const useStyles = makeStyles((theme) => ({
 	container: {
 		height: "80vh",
+		width: "100%",
 		textAlign: "center",
 		backgroundImage: "url('../img@2x.png')",
-		backgroundSize: "contain",
+		backgroundSize: "cover",
 		backgroundPosition: "center",
 		backgroundRepeat: "no-repeat",
 		flexDirection: "column",
 		justifyContent: "center",
 		alignItems: "center",
 		padding: theme.spacing(0, 4),
+		[theme.breakpoints.down("md")]: {
+			padding: theme.spacing(0, 2),
+			height: "100vh",
+		},
 	},
 
 	everythingYouNeedForReliab: {
@@ -36,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
 	juiceUsers: {
 		height: 48,
 		width: "70%",
+		[theme.breakpoints.down("md")]: {
+			width: "100%",
+		},
 	},
 	diverseIndustryLeadersTrust: {
 		letterSpacing: 0.37,
@@ -73,7 +81,7 @@ export default function HeroSection() {
 			<div className={styles.credentials}>
 				<img className={styles.juiceUsers} alt="" src="../group-82.svg" />
 				<Box className={styles.diverseIndustryLeadersTrust} mt={2}></Box>
-				<Typography variant="body1" fontWeight="300">
+				<Typography variant={mediumScreen ? "body2" : "body1"} fontWeight="300">
 					DIVERSE INDUSTRY LEADERS TRUST JUICE
 				</Typography>
 			</div>

@@ -32,6 +32,7 @@ export default function MUIDrawer() {
 	};
 
 	const spaRoutesObj = {
+		Home: "/",
 		Documentation: appData.documentation,
 		"About us": "/about-us",
 		"Contact us": "/contact-us",
@@ -48,6 +49,7 @@ export default function MUIDrawer() {
 		>
 			<List>
 				{[
+					"Home",
 					"Documentation",
 					"About us",
 					"Contact us",

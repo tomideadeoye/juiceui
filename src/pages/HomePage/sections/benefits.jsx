@@ -78,7 +78,7 @@ export default function BenefitsSection() {
 				Why Juice
 			</Typography>
 
-			<Grid container rowGap={3} columnSpacing={2}>
+			<Grid container spacing={3}>
 				{benefitsData.map((benefit, index) => {
 					return (
 						<Grid item xs={12} sm={6} key={index}>
