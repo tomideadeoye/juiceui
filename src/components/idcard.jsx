@@ -28,15 +28,7 @@ export default function Idcard({ data }) {
 
 	return (
 		<AnimationMakerCards>
-			<Stack
-				alignItems={{ md: "center", lg: "flex-start" }}
-				sx={{
-					"&:hover": {
-						marginBottom: theme.spacing(3),
-						marginTop: theme.spacing(3),
-					},
-				}}
-			>
+			<Stack alignItems={{ md: "center", lg: "flex-start" }} sx={{}}>
 				<Stack
 					sx={{
 						borderRadius: theme.borderRadius.md,

@@ -1,6 +1,7 @@
 import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
+import AnimatedText from "react-animated-text-content";
 import ContactButton from "../../../components/juiceButton";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: "center",
 		marginBottom: theme.spacing(1),
 		padding: theme.spacing(0, 4),
-		[theme.breakpoints.down("sm")]: {
+		[theme.breakpoints.down("md")]: {
 			padding: theme.spacing(0, 2),
-			height: "100vh",
+			height: "60vh",
 		},
 	},
 
@@ -60,16 +61,35 @@ export default function HeroSection() {
 	return (
 		<Stack className={styles.container} spacing={4}>
 			<b className={styles.everythingYouNeedForReliab}></b>
+
 			<Typography
-				variant={mediumScreen ? "h4" : "h2"}
+				pt={mediumScreen ? 4 : 0}
+				variant={mediumScreen ? "h5" : "h2"}
 				fontWeight="550"
 				maxWidth={{ xs: "100%", md: "70%" }}
 			>
-				Everything you need for reliable global payments
+				<AnimatedText
+					type="words"
+					animation={{
+						x: "200px",
+						y: "-20px",
+						scale: 1.1,
+						ease: "ease-in-out",
+					}}
+					animationType="float"
+					interval={0.06}
+					duration={0.8}
+					// tag="h2"
+					includeWhiteSpaces
+					threshold={0.1}
+					rootMargin="20%"
+				>
+					Everything you need for reliable global payments
+				</AnimatedText>
 			</Typography>
 
 			<Typography
-				variant="body1"
+				variant={mediumScreen ? "body2" : "body1"}
 				fontWeight="300"
 				maxWidth={{ xs: "100%", md: "60%" }}
 			>

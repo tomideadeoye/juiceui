@@ -8,10 +8,7 @@ import ImageDataSplit from "./sections/imageDataSplit";
 import BenefitsSection from "./sections/benefits";
 import BragSection2 from "./sections/bragSection2";
 import JuiceAccordion from "../../components/muiAccordion";
-import {
-	AnimationMakerScroll,
-	PageTransition,
-} from "../../components/animations";
+import { PageTransition } from "../../components/animations";
 import { splitDataContent } from "../../appTextData";
 
 const useStyles = makeStyles((theme) => ({
@@ -89,9 +86,9 @@ const Main = () => {
 				<HeroSection />
 				<Stack className={styles.acceptProcessPaymentsSection} spacing={3}>
 					<Typography
-						variant={mediumDown ? "h4" : "h6"}
+						variant={mediumDown ? "h4" : "body1"}
 						fontWeight="bold"
-						maxWidth={mediumDown ? "450px" : "80%"}
+						maxWidth={mediumDown ? "450px" : "70%"}
 					>
 						Accept and process payments in a secure and scalable way
 					</Typography>
@@ -158,16 +155,13 @@ const Main = () => {
 								</Typography>
 							</Stack>
 						</Stack>
-
-						<AnimationMakerScroll>
-							<Box
-								src="../img1@2x.png"
-								alt="Juice Dashboard"
-								className={styles.imgIcon1}
-								component="img"
-								width="100%"
-							/>{" "}
-						</AnimationMakerScroll>
+						<Box
+							src="../img1@2x.png"
+							alt="Juice Dashboard"
+							className={styles.imgIcon1}
+							component="img"
+							width="100%"
+						/>{" "}
 					</Stack>
 
 					<Stack
