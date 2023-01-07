@@ -34,11 +34,11 @@ export default function Benefits({ data }) {
 				alt="juiceIconsTransactionIcon"
 				src={data.icon}
 			/>
-			<Typography variant="h6" color="text.secondary" fontWeight="bold">
+			<Typography variant="h6" fontWeight="bold">
 				{data.title}
 			</Typography>
 
-			<Typography variant="body2" color="text.secondary" lineHeight="32px">
+			<Typography variant="body2" lineHeight="32px">
 				{data.description}
 			</Typography>
 		</Stack>
