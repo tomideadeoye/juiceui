@@ -26,7 +26,7 @@ const TermsConditions = () => {
 
 	return (
 		<Stack className={styles.container}>
-			<Typography mb={4} variant="h4" fontWeight="normal" textAlign="center">
+			<Typography mb={4} variant="h4" fontWeight={600} textAlign="center">
 				Terms & conditions
 			</Typography>
 			Please read these Terms of Service (“Terms”), which set forth the legally

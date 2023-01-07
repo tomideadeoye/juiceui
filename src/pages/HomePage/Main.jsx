@@ -2,7 +2,7 @@ import React from "react";
 import HeroSection from "./sections/heroSection";
 import Benefits from "../../components/benefits";
 import { makeStyles } from "@mui/styles";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import ChargesSection from "./sections/chargesSection";
 import ImageDataSplit from "./sections/imageDataSplit";
 import BenefitsSection from "./sections/benefits";
@@ -58,13 +58,14 @@ const useStyles = makeStyles((theme) => ({
 	controlTextBox: {
 		padding: theme.spacing(2, 4, 0, 3),
 		[theme.breakpoints.down("sm")]: {
-			padding: theme.spacing(2, 1, 0, 1),
+			padding: theme.spacing(2, 0, 0, 0),
 		},
 	},
 }));
 
 const Main = () => {
 	const styles = useStyles();
+	const mediumDown = useMediaQuery("(min-width:600px)");
 
 	const benefitsArray = [
 		{
@@ -87,7 +88,11 @@ const Main = () => {
 			<Stack className={styles.container}>
 				<HeroSection />
 				<Stack className={styles.acceptProcessPaymentsSection} spacing={3}>
-					<Typography variant="h4" fontWeight="bold" maxWidth="450px">
+					<Typography
+						variant={mediumDown ? "h4" : "h6"}
+						fontWeight="bold"
+						maxWidth={mediumDown ? "450px" : "80%"}
+					>
 						Accept and process payments in a secure and scalable way
 					</Typography>
 

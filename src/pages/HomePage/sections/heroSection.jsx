@@ -5,7 +5,7 @@ import ContactButton from "../../../components/juiceButton";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
-		height: "80vh",
+		height: "70vh",
 		width: "100%",
 		textAlign: "center",
 		backgroundImage: "url('../img@2x.png')",
@@ -13,10 +13,11 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: "center",
 		backgroundRepeat: "no-repeat",
 		flexDirection: "column",
-		justifyContent: "center",
+		justifyContent: "space-around",
 		alignItems: "center",
+		marginBottom: theme.spacing(1),
 		padding: theme.spacing(0, 4),
-		[theme.breakpoints.down("md")]: {
+		[theme.breakpoints.down("sm")]: {
 			padding: theme.spacing(0, 2),
 			height: "100vh",
 		},
