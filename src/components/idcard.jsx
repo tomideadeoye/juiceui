@@ -8,9 +8,17 @@ import { AnimationMakerCards } from "./animations";
 const useStyles = makeStyles(() => ({
 	image: {
 		width: 300,
+
 		alignSelf: "center",
 		[theme.breakpoints.down("md")]: {
-			width: "60%",
+			width: 300,
+		},
+	},
+
+	mainImage: {
+		filter: "grayscale(100%)",
+		"&:hover": {
+			filter: "grayscale(0%)",
 		},
 	},
 }));
@@ -36,7 +44,13 @@ export default function Idcard({ data }) {
 					}}
 					className={styles.image}
 				>
-					<Box component="img" src={data.image} alt="" sx={{}} />
+					<Box
+						className={styles.mainImage}
+						component="img"
+						src={data.image}
+						alt=""
+						sx={{}}
+					/>
 					<Stack
 						spacing={2}
 						sx={{

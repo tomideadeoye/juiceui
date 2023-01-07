@@ -2,7 +2,6 @@
 import { Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
-import { AnimationMakerCards } from "./animations";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -29,21 +28,19 @@ const useStyles = makeStyles((theme) => ({
 export default function Benefits({ data }) {
 	const styles = useStyles();
 	return (
-		<AnimationMakerCards>
-			<Stack className={styles.container} spacing={2}>
-				<img
-					className={styles.juiceIconsTransactionIcon}
-					alt="juiceIconsTransactionIcon"
-					src={data.icon}
-				/>
-				<Typography variant="h6" color="text.secondary" fontWeight="bold">
-					{data.title}
-				</Typography>
+		<Stack className={styles.container} spacing={2}>
+			<img
+				className={styles.juiceIconsTransactionIcon}
+				alt="juiceIconsTransactionIcon"
+				src={data.icon}
+			/>
+			<Typography variant="h6" color="text.secondary" fontWeight="bold">
+				{data.title}
+			</Typography>
 
-				<Typography variant="body2" color="text.secondary" lineHeight="32px">
-					{data.description}
-				</Typography>
-			</Stack>
-		</AnimationMakerCards>
+			<Typography variant="body2" color="text.secondary" lineHeight="32px">
+				{data.description}
+			</Typography>
+		</Stack>
 	);
 }

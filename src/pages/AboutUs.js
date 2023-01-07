@@ -170,41 +170,43 @@ const AboutUs = () => {
 					<Typography variant="body1" fontWeight={300} gutterBottom>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					</Typography>
-					<Grid
-						container
-						spacing={2}
-						className={styles.speedySettlementsSection}
-					>
-						<Grid item sm={12} md={6}>
-							<Stack spacing={2}>
-								<Typography variant="h5" fontWeight="bold">
-									Speedy settlements
-								</Typography>
-								<Typography
-									variant="body1"
-									fontWeight="300"
-									lineHeight="32px"
-									maxWidth="400px"
-								>
-									Legacy payments take up to 4 business days to settle. With
-									Juice’s rapid payment system, payments settle in only a couple
-									of hours. Save time and effort with effective scheme
-									management, and timely settlement.
-								</Typography>
-							</Stack>
+					<Box>
+						<Grid
+							container
+							spacing={2}
+							className={styles.speedySettlementsSection}
+						>
+							<Grid item sm={12} md={6}>
+								<Stack spacing={2}>
+									<Typography variant="h5" fontWeight="bold">
+										Speedy settlements
+									</Typography>
+									<Typography
+										variant="body1"
+										fontWeight="300"
+										lineHeight="32px"
+										maxWidth="400px"
+									>
+										Legacy payments take up to 4 business days to settle. With
+										Juice’s rapid payment system, payments settle in only a
+										couple of hours. Save time and effort with effective scheme
+										management, and timely settlement.
+									</Typography>
+								</Stack>
+							</Grid>
+							<Grid item sm={12} md={6}>
+								<Box
+									sx={{
+										backgroundImage: `url(../img2@2x.png)`,
+										backgroundRepeat: "no-repeat",
+										backgroundSize: "cover",
+										height: "100%",
+										width: "100%",
+									}}
+								/>
+							</Grid>
 						</Grid>
-						<Grid item sm={12} md={6}>
-							<Box
-								sx={{
-									backgroundImage: `url(../img2@2x.png)`,
-									backgroundRepeat: "no-repeat",
-									backgroundSize: "cover",
-									height: "100%",
-									width: "100%",
-								}}
-							/>
-						</Grid>
-					</Grid>
+					</Box>
 					<Stack spacing={2} direction={{ xs: "column", sm: "row" }}>
 						<Benefits data={values[0]} />
 						<Benefits data={values[1]} />
@@ -230,13 +232,15 @@ const AboutUs = () => {
 					<Typography variant="h5" fontWeight={700} gutterBottom>
 						Engineering
 					</Typography>
-					<Grid container>
-						{teamMembers.engineering.map((member) => (
-							<Grid key={member.name} item sm={12} md={6} lg={4}>
-								<Idcard data={member} />
-							</Grid>
-						))}
-					</Grid>
+					<Box>
+						<Grid container>
+							{teamMembers.engineering.map((member) => (
+								<Grid key={member.name} item sm={12} md={6} lg={4}>
+									<Idcard data={member} />
+								</Grid>
+							))}
+						</Grid>
+					</Box>
 					<Typography variant="h5" fontWeight={700} gutterBottom>
 						Product
 					</Typography>
