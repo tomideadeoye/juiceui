@@ -8,6 +8,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Stack } from "@mui/system";
 import { makeStyles } from "@mui/styles";
 import ContactButton from "./juiceButton";
+import { AnimationMakerText } from "./animations";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(2, 2),
 		background: theme.palette.white.main,
 		borderRadius: theme.borderRadius.md,
+		alignItems: "start",
 	},
 }));
 
@@ -50,7 +52,9 @@ export default function JuiceAccordion() {
 	return (
 		<Stack className={styles.container} spacing={4}>
 			<Typography variant="h4" fontWeight="bold" data-scroll-to="benefitsText">
-				Payment solutions for diverse use cases
+				<AnimationMakerText>
+					Payment solutions for diverse use cases
+				</AnimationMakerText>{" "}
 			</Typography>
 			<Typography variant="body1" fontWeight={200} mt={4}>
 				Discover how we help some of Africa&apos;s leading businesses

@@ -3,6 +3,7 @@ import { Box, Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import { Link } from "react-router-dom";
+import { AnimationMakerButton } from "./animations";
 
 const useStyles = makeStyles((theme) => ({
 	buttons: {
@@ -72,19 +73,21 @@ export default function ContactButton({ color, label, link }) {
 	}
 
 	return (
-		<Box
-			to={link ? link : "/contact-us"}
-			component={Link}
-			sx={{
-				textDecoration: "none",
-				color: "inherit",
-			}}
+		<AnimationMakerButton>
+			<Box
+				to={link ? link : "/contact-us"}
+				component={Link}
+				sx={{
+					textDecoration: "none",
+					color: "inherit",
+				}}
 
-			// style={{ textDecoration: "none", color: "inherit" }}
-		>
-			<Stack className={colorHandler()} direction="row" spacing={1}>
-				{label}
-			</Stack>
-		</Box>
+				// style={{ textDecoration: "none", color: "inherit" }}
+			>
+				<Stack className={colorHandler()} direction="row" spacing={1}>
+					{label}
+				</Stack>
+			</Box>
+		</AnimationMakerButton>
 	);
 }

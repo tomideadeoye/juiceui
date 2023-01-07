@@ -2,6 +2,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
+import { AnimationMakerText } from "../../../components/animations";
 import ContactButton from "../../../components/juiceButton";
 import { Checkrizer } from "./chargesSection";
 
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 			fontWeight: "bold",
 		},
 		"&:hover": {
-			background: "#322e5d",
+			background: `linear-gradient(to right,  ${theme.palette.primary.dark} 0%, black 100%)`,
 		},
 	},
 
@@ -48,7 +49,7 @@ export default function ImageDataSplit({ data }) {
 		<Stack direction={{ sm: "column", md: "row" }} className={styles.container}>
 			<Stack className={styles.mainData} spacing={4}>
 				<Typography variant="h4" fontWeight="bold">
-					{title}
+					<AnimationMakerText>{title}</AnimationMakerText>
 				</Typography>
 
 				<Typography variant="body1" fontWeight="300" lineHeight="32px">

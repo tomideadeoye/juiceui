@@ -8,7 +8,10 @@ import ImageDataSplit from "./sections/imageDataSplit";
 import BenefitsSection from "./sections/benefits";
 import BragSection2 from "./sections/bragSection2";
 import JuiceAccordion from "../../components/muiAccordion";
-import { PageTransition } from "../../components/animations";
+import {
+	AnimationMakerText,
+	PageTransition,
+} from "../../components/animations";
 import { splitDataContent } from "../../appTextData";
 
 const useStyles = makeStyles((theme) => ({
@@ -47,10 +50,14 @@ const useStyles = makeStyles((theme) => ({
 	youAreInControl: {
 		width: "100%",
 		backgroundColor: theme.palette.primary.dark,
+
 		padding: theme.spacing(2, 2, 0, 2),
 		borderRadius: theme.borderRadius.md,
 		color: theme.palette.white.main,
 		lineHeight: "32px",
+		"&:hover": {
+			background: `linear-gradient(to right,  ${theme.palette.primary.dark} 0%, ${theme.palette.grey[700]} 100%)`,
+		},
 	},
 	controlTextBox: {
 		padding: theme.spacing(2, 4, 0, 3),
@@ -128,7 +135,7 @@ const Main = () => {
 					<Stack className={styles.youAreInControl} spacing={3}>
 						<Stack spacing={3} className={styles.controlTextBox}>
 							<Typography variant="h5" fontWeight="bold" mt={2}>
-								You’re in control
+								<AnimationMakerText>You’re in control</AnimationMakerText>
 							</Typography>
 							<Stack
 								direction={{ xs: "column", sm: "row" }}

@@ -79,7 +79,6 @@ export default function HeroSection() {
 					animationType="float"
 					interval={0.06}
 					duration={0.8}
-					// tag="h2"
 					includeWhiteSpaces
 					threshold={0.1}
 					rootMargin="20%"

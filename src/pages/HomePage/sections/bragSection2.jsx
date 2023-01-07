@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 
 		"&:hover": {
-			background: "#322e5d",
+			background: `linear-gradient(to right,  ${theme.palette.primary.dark} 0%, ${theme.palette.grey[700]} 100%)`,
 		},
 	},
 }));

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import React from "react";
+import AnimatedText from "react-animated-text-content";
 
 export function PageTransition({ children }) {
 	return (
@@ -49,5 +50,40 @@ export function AnimationMakerLongText({ children }) {
 		>
 			{children}
 		</motion.path>
+	);
+}
+
+export function AnimationMakerText({ children }) {
+	return (
+		<AnimatedText
+			type="words"
+			animation={{
+				x: "200px",
+				y: "-20px",
+				scale: 1.1,
+				ease: "ease-in-out",
+			}}
+			animationType="float"
+			interval={0.06}
+			duration={0.8}
+			includeWhiteSpaces
+			threshold={0.1}
+			rootMargin="20%"
+		>
+			{children}
+		</AnimatedText>
+	);
+}
+
+export function AnimationMakerButton({ children }) {
+	return (
+		<motion.div
+			className="box"
+			whileHover={{ scale: 1.1 }}
+			whileTap={{ scale: 0.9 }}
+			transition={{ type: "spring", stiffness: 400, damping: 17 }}
+		>
+			{children}
+		</motion.div>
 	);
 }

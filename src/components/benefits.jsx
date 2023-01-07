@@ -2,6 +2,7 @@
 import { Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
+import { AnimationMakerText } from "./animations";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -35,7 +36,7 @@ export default function Benefits({ data }) {
 				src={data.icon}
 			/>
 			<Typography variant="h6" fontWeight="bold">
-				{data.title}
+				<AnimationMakerText>{data.title}</AnimationMakerText>
 			</Typography>
 
 			<Typography variant="body2" lineHeight="32px">
