@@ -72,38 +72,19 @@ export default function ContactButton({ color, label, link }) {
 	}
 
 	return (
-		<>
-			{external ? (
-				<Box
-					href={link}
-					component="a"
-					sx={{
-						textDecoration: "none",
-						color: "inherit",
-					}}
+		<Box
+			to={link ? link : "/contact-us"}
+			component={Link}
+			sx={{
+				textDecoration: "none",
+				color: "inherit",
+			}}
 
-					// style={{ textDecoration: "none", color: "inherit" }}
-				>
-					<Stack className={colorHandler()} direction="row" spacing={1}>
-						{label}
-					</Stack>
-				</Box>
-			) : (
-				<Box
-					to={link ? link : "/contact-us"}
-					component={Link}
-					sx={{
-						textDecoration: "none",
-						color: "inherit",
-					}}
-
-					// style={{ textDecoration: "none", color: "inherit" }}
-				>
-					<Stack className={colorHandler()} direction="row" spacing={1}>
-						{label}
-					</Stack>
-				</Box>
-			)}
-		</>
+			// style={{ textDecoration: "none", color: "inherit" }}
+		>
+			<Stack className={colorHandler()} direction="row" spacing={1}>
+				{label}
+			</Stack>
+		</Box>
 	);
 }

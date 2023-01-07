@@ -45,8 +45,11 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: theme.palette.grey[800],
 		padding: theme.spacing(1),
 		margin: theme.spacing(0, 2, 0, 0),
+
 		"&:hover": {
-			backgroundColor: theme.palette.grey[700],
+			// backgroundColor: theme.palette.grey[700],
+			webkitFilter: "invert(100%)" /* safari 6.0 - 9.0 */,
+			filter: "invert(100%)",
 		},
 	},
 
