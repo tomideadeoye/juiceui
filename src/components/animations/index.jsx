@@ -26,17 +26,20 @@ export function PageTransition({ children }) {
 
 export function AnimationMakerCards({ children }) {
 	return (
-		<motion.div
-			drag
-			dragConstraints={{
-				top: -50,
-				left: -50,
-				right: 50,
-				bottom: 50,
-			}}
+		<
+			// motion.div
+			// drag
+			// dragConstraints={{
+			// 	top: -50,
+			// 	left: -50,
+			// 	right: 50,
+			// 	bottom: 50,
+			// }}
 		>
 			{children}
-		</motion.div>
+		</
+			// motion.div
+		>
 	);
 }
 

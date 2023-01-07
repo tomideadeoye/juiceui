@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
 	image: {
 		width: 300,
 
-		alignSelf: "center",
+		alignSelf: "start",
 		[theme.breakpoints.down("md")]: {
 			width: 300,
 		},

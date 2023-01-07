@@ -5,6 +5,7 @@ import Benefits from "../components/benefits";
 import ImageDataSplit from "./HomePage/sections/imageDataSplit";
 import Idcard from "../components/idcard";
 import { PageTransition } from "../components/animations";
+import { teamMembers } from "../appTextData";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -61,71 +62,6 @@ const splitDataContent = [
 		},
 	},
 ];
-
-const teamMembers = {
-	management: [
-		{
-			name: "Ife Johnson",
-			image: "../img18@2x.png",
-		},
-		{
-			name: "Justin Ziegler",
-			position: "CEO",
-			image: "../img17@2x.png",
-		},
-	],
-	engineering: [
-		{
-			name: "Ridwan Otunn",
-			image: "../img16@2x.png",
-		},
-		{
-			name: "Pelumi Sola-Aremu",
-			image: "../img15@2x.png",
-		},
-		{
-			name: "Uk Chukundah",
-			image: "../img14@2x.png",
-		},
-		{
-			name: "Popsana Barida",
-			image: "../img13@2x.png",
-		},
-		{
-			name: "Rasheed Atanda",
-			image: "../img12@2x.png",
-		},
-		{
-			name: "Chizi Ogbonda",
-			image: "../img11@2x.png",
-		},
-		{
-			name: "Joseph Oladokun",
-			image: "../img10@2x.png",
-		},
-	],
-	product: [
-		{
-			name: "Ron Ogheneruona",
-			image: "../img9@2x.png",
-		},
-		{
-			name: "Grace Thompson",
-			image: "../img8@2x.png",
-		},
-		{
-			name: "Tomasz Zastawny",
-			image: "../img7@2x.png",
-		},
-	],
-
-	treasury: [
-		{
-			name: "Uche Okehie",
-			image: "../image-12@2x.png",
-		},
-	],
-};
 
 const AboutUs = () => {
 	const styles = useStyles();
