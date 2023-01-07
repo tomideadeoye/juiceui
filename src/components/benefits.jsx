@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
 
 	juiceIconsTransactionIcon: {
 		width: "11%",
+		[theme.breakpoints.down("md")]: {
+			width: "80px",
+		},
 	},
 }));
 

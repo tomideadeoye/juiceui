@@ -2,7 +2,7 @@ import React from "react";
 
 import { makeStyles } from "@mui/styles";
 import Benefits from "../../../components/benefits";
-import { Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -77,16 +77,17 @@ export default function BenefitsSection() {
 			<Typography variant="body1" fontWeight={200} mt={4}>
 				Why Juice
 			</Typography>
-
-			<Grid container spacing={3}>
-				{benefitsData.map((benefit, index) => {
-					return (
-						<Grid item xs={12} sm={6} key={index}>
-							<Benefits key={benefit.title} data={benefit} />
-						</Grid>
-					);
-				})}
-			</Grid>
+			<Box>
+				<Grid container spacing={3}>
+					{benefitsData.map((benefit, index) => {
+						return (
+							<Grid item xs={12} sm={6} key={index}>
+								<Benefits key={benefit.title} data={benefit} />
+							</Grid>
+						);
+					})}
+				</Grid>
+			</Box>
 		</Stack>
 	);
 }

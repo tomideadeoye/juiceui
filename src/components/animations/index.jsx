@@ -111,22 +111,24 @@ export const AnimationMakerScroll = ({ children }) => {
 
 export const AnimationMakerCards = ({ children }) => {
 	return (
-		<motion.div
-			className="box"
-			whileHover={{
-				scale: 1.1,
-			}}
-			// whileTap={{ scale: 0.8 }}
-			transition={{
-				duration: 1,
-				ease: "easeInOut",
-				// times: [0, 0.2, 0.5, 0.8, 1],
-				// repeat: Infinity,
-				// repeatDelay: 1,
-			}}
-		>
-			{children}
-		</motion.div>
+		<AnimatePresence exitBeforeEnter>
+			<motion.div
+				className="box"
+				whileHover={{
+					scale: 1.1,
+				}}
+				// whileTap={{ scale: 0.8 }}
+				transition={{
+					duration: 1,
+					ease: "easeIn",
+					// times: [0, 0.2, 0.5, 0.8, 1],
+					// repeat: Infinity,
+					// repeatDelay: 1,
+				}}
+			>
+				{children}
+			</motion.div>
+		</AnimatePresence>
 	);
 };
 
