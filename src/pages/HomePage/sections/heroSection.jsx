@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(0, 4),
 		[theme.breakpoints.down("md")]: {
 			padding: theme.spacing(0, 2),
-			height: "60vh",
+			height: "100%",
 		},
 	},
 
