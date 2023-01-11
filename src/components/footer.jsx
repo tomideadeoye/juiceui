@@ -21,9 +21,7 @@ const useStyles = makeStyles((theme) => ({
 			justifyContent: "center",
 			gap: theme.spacing(2),
 		},
-		"& > a": {
-			textDecoration: "none",
-		},
+		"& > a": theme.links,
 
 		"&:hover": {
 			background: theme.palette.pink.main,

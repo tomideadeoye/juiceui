@@ -2,6 +2,8 @@ import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { PageTransition } from "../components/animations";
+import { lorem } from "../appTextData";
+import Slider from "../components/slider";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -10,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: "justify",
 		alignItems: "center",
 		width: "100%",
+		[theme.breakpoints.down("md")]: {
+			padding: theme.spacing(4, 2),
+		},
 	},
 	heading: {
 		fontSize: theme.typography.h5.fontSize,
@@ -19,6 +24,22 @@ const useStyles = makeStyles((theme) => ({
 	section2: {
 		background: theme.palette.blue[300],
 		padding: theme.spacing(4, 5),
+		[theme.breakpoints.down("md")]: {
+			padding: theme.spacing(4, 2),
+		},
+	},
+	section3: {
+		background: theme.palette.background.default,
+		padding: theme.spacing(4, 5),
+		[theme.breakpoints.down("md")]: {
+			padding: theme.spacing(4, 2),
+		},
+	},
+	sliderImg: {
+		width: "100%",
+		height: "100%",
+		objectFit: "contain",
+		borderRadius: theme.spacing(1),
 	},
 }));
 
@@ -72,38 +93,10 @@ const SingleArticle = () => {
 					Section title goes here
 				</Typography>
 				<Typography mb={4} variant="body1" fontWeight={300}>
-					Paragraph 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Etiam a aliquam nunc. Quisque egestas, enim nec euismod lobortis,
-					metus ante tincidunt purus, sit amet condimentum metus urna eu velit.
-					Proin justo dolor, rutrum eget est ut, ultrices bibendum ligula.
-					Curabitur eget quam at quam pulvinar finibus. Maecenas quis maximus
-					nisi, sed tempus tellus. Curabitur ex dui, tincidunt sit amet magna
-					eget, volutpat pretium massa. Pellentesque augue mi, accumsan
-					consectetur tortor id, tempor rutrum tellus. Proin dictum tellus
-					purus, in condimentum massa commodo eu. Sed sit amet massa bibendum,
-					ultricies lectus in, laoreet metus. Phasellus ornare, enim sit amet
-					pretium accumsan, felis quam aliquet ante, ac laoreet orci massa vel
-					metus. Sed ex augue, fermentum nec hendrerit at, lacinia a ligula.
-					Phasellus enim purus, bibendum gravida auctor ac, suscipit vel velit.
-					Mauris a lectus id nibh sagittis posuere ac sit amet est. Curabitur
-					nunc eros, fringilla vitae facilisis et, fermentum in lectus.
+					{lorem}
 				</Typography>
 				<Typography mb={4} variant="body1" fontWeight={300}>
-					Paragraph 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Etiam a aliquam nunc. Quisque egestas, enim nec euismod lobortis,
-					metus ante tincidunt purus, sit amet condimentum metus urna eu velit.
-					Proin justo dolor, rutrum eget est ut, ultrices bibendum ligula.
-					Curabitur eget quam at quam pulvinar finibus. Maecenas quis maximus
-					nisi, sed tempus tellus. Curabitur ex dui, tincidunt sit amet magna
-					eget, volutpat pretium massa. Pellentesque augue mi, accumsan
-					consectetur tortor id, tempor rutrum tellus. Proin dictum tellus
-					purus, in condimentum massa commodo eu. Sed sit amet massa bibendum,
-					ultricies lectus in, laoreet metus. Phasellus ornare, enim sit amet
-					pretium accumsan, felis quam aliquet ante, ac laoreet orci massa vel
-					metus. Sed ex augue, fermentum nec hendrerit at, lacinia a ligula.
-					Phasellus enim purus, bibendum gravida auctor ac, suscipit vel velit.
-					Mauris a lectus id nibh sagittis posuere ac sit amet est. Curabitur
-					nunc eros, fringilla vitae facilisis et, fermentum in lectus.
+					{lorem}
 				</Typography>
 			</Stack>
 			<Stack width="100%" className={styles.section2}>
@@ -188,22 +181,7 @@ const SingleArticle = () => {
 						Section subtitle goes here
 					</Typography>
 					<Typography variant="body1" fontWeight={300} lineHeight={2} mt={2}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a
-						aliquam nunc. Quisque egestas, enim nec euismod lobortis, metus ante
-						tincidunt purus, sit amet condimentum metus urna eu velit. Proin
-						justo dolor, rutrum eget est ut, ultrices bibendum ligula. Curabitur
-						eget quam at quam pulvinar finibus. Maecenas quis maximus nisi, sed
-						tempus tellus. Curabitur ex dui, tincidunt sit amet magna eget,
-						volutpat pretium massa. Pellentesque augue mi, accumsan consectetur
-						tortor id, tempor rutrum tellus. Proin dictum tellus purus, in
-						condimentum massa commodo eu. Sed sit amet massa bibendum, ultricies
-						lectus in, laoreet metus. Phasellus ornare, enim sit amet pretium
-						accumsan, felis quam aliquet ante, ac laoreet orci massa vel metus.
-						Sed ex augue, fermentum nec hendrerit at, lacinia a ligula.
-						Phasellus enim purus, bibendum gravida auctor ac, suscipit vel
-						velit. Mauris a lectus id nibh sagittis posuere ac sit amet est.
-						Curabitur nunc eros, fringilla vitae facilisis et, fermentum in
-						lectus.
+						{lorem}
 					</Typography>
 					<Typography
 						variant="h5"
@@ -212,7 +190,52 @@ const SingleArticle = () => {
 						gutterBottom
 						maxWidth={500}
 					>
-						Section subtitle goes here
+						Section subtitle and slider go here
+					</Typography>
+					<Slider />
+					<Typography variant="body1" fontWeight={300} lineHeight={2} mt={2}>
+						{lorem}
+					</Typography>
+				</Stack>
+			</Stack>
+			<Stack width="100%" className={styles.section3}>
+				<Stack>
+					<Typography variant="h3" fontWeight={700} gutterBottom maxWidth={600}>
+						Section title goes here and the image
+					</Typography>
+					<Typography
+						variant="body1"
+						fontWeight={300}
+						maxWidth={500}
+						lineHeight={2}
+					>
+						Here goes some subtitle but it might unecessary to use it as below
+						goes the section content.
+					</Typography>
+
+					<Box
+						mt={3}
+						component="img"
+						className={styles.sliderImg}
+						src="https://source.unsplash.com/1920x1080/?nature,water"
+						alt="nature"
+					/>
+
+					<Typography variant="body1" fontWeight={300} lineHeight={2} mt={2}>
+						{lorem}
+					</Typography>
+					<Typography
+						variant="h4"
+						mt={5}
+						fontWeight={700}
+						gutterBottom
+						maxWidth={500}
+					>
+						Section subtitle and slider go here
+					</Typography>
+					<Slider />
+					<Typography variant="body1" fontWeight={300} lineHeight={2} mt={5}>
+						{lorem}
 					</Typography>
 				</Stack>
 			</Stack>

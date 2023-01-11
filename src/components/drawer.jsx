@@ -10,15 +10,26 @@ import { useMediaQuery } from "@mui/material";
 import theme from "../assets/theme";
 import MenuIcon from "@mui/icons-material/Menu";
 import { appData } from "../appTextData";
+import { makeStyles } from "@mui/styles";
+import { Link } from "react-router-dom";
+
+const useStyles = makeStyles((theme) => ({
+	BackdropProps: {
+		background: "transparent",
+	},
+	link: theme.links,
+}));
 
 export default function MUIDrawer() {
 	const [state, setState] = React.useState({
 		right: false,
 	});
 
-	const handleClick = React.useCallback((text) => {
-		window.location.href = text;
-	}, []);
+	const classes = useStyles();
+
+	// const handleClick = React.useCallback((text) => {
+	// 	window.location.href = text;
+	// }, []);
 
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
@@ -42,7 +53,11 @@ export default function MUIDrawer() {
 
 	const list = (anchor) => (
 		<Box
-			sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+			sx={{
+				width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+				// backgroundColor: "rgba(0, 0, 0, 0.6)",
+				height: "100%",
+			}}
 			role="presentation"
 			onClick={toggleDrawer(anchor, false)}
 			onKeyDown={toggleDrawer(anchor, false)}
@@ -50,7 +65,6 @@ export default function MUIDrawer() {
 			<List>
 				{[
 					"Home",
-					"Documentation",
 					"About us",
 					"Contact us",
 					"Terms & Conditions",
@@ -58,13 +72,28 @@ export default function MUIDrawer() {
 				].map((text) => (
 					<>
 						<ListItem key={text} disablePadding>
-							<ListItemButton onClick={() => handleClick(spaRoutesObj[text])}>
-								<ListItemText primary={text} />
+							<ListItemButton>
+								<Link className={classes.link} to={spaRoutesObj[text]}>
+									<ListItemText primary={text} />
+								</Link>
 							</ListItemButton>
 						</ListItem>
+
 						<Divider />
 					</>
 				))}
+				<ListItem disablePadding>
+					<ListItemButton>
+						<a
+							className={classes.link}
+							href={spaRoutesObj["Documentation"]}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<ListItemText primary={"Documentation"} />
+						</a>
+					</ListItemButton>
+				</ListItem>
 			</List>
 		</Box>
 	);
@@ -78,6 +107,13 @@ export default function MUIDrawer() {
 					{match && <MenuIcon onClick={toggleDrawer("right", true)} />}
 
 					<Drawer
+						ModalProps={{
+							BackdropProps: {
+								classes: {
+									root: classes.BackdropProps,
+								},
+							},
+						}}
 						anchor={anchor}
 						open={state.right}
 						onClose={toggleDrawer(anchor, false)}

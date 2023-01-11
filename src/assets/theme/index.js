@@ -104,4 +104,9 @@ export default createTheme({
 			},
 		},
 	},
+
+	links: {
+		textDecoration: "none",
+		color: "inherit",
+	},
 });

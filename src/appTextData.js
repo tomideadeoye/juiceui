@@ -103,4 +103,21 @@ const teamMembers = {
 	],
 };
 
-export { splitDataContent, appData, teamMembers };
+const lorem = `	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a
+aliquam nunc. Quisque egestas, enim nec euismod lobortis, metus ante
+tincidunt purus, sit amet condimentum metus urna eu velit. Proin
+justo dolor, rutrum eget est ut, ultrices bibendum ligula. Curabitur
+eget quam at quam pulvinar finibus. Maecenas quis maximus nisi, sed
+tempus tellus. Curabitur ex dui, tincidunt sit amet magna eget,
+volutpat pretium massa. Pellentesque augue mi, accumsan consectetur
+tortor id, tempor rutrum tellus. Proin dictum tellus purus, in
+condimentum massa commodo eu. Sed sit amet massa bibendum, ultricies
+lectus in, laoreet metus. Phasellus ornare, enim sit amet pretium
+accumsan, felis quam aliquet ante, ac laoreet orci massa vel metus.
+Sed ex augue, fermentum nec hendrerit at, lacinia a ligula.
+Phasellus enim purus, bibendum gravida auctor ac, suscipit vel
+velit. Mauris a lectus id nibh sagittis posuere ac sit amet est.
+Curabitur nunc eros, fringilla vitae facilisis et, fermentum in
+lectus.`;
+
+export { splitDataContent, appData, teamMembers, lorem };

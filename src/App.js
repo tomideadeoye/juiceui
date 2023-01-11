@@ -10,14 +10,12 @@ import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import TermsConditions from "./pages/TermsConditions";
 import Articles from "./pages/Articles";
-import Article from "./pages/Article";
 import { useEffect } from "react";
 import React from "react";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import AnimatedCursor from "react-animated-cursor";
 import SingleArticle from "./pages/SingleArticle";
-// import { Box } from "@mui/material";
 
 function App() {
 	const action = useNavigationType();
@@ -112,8 +110,6 @@ function App() {
 				<Route path="/articles" element={<Articles />} />
 
 				<Route path="/article-details" element={<SingleArticle />} />
-
-				<Route path="/article" element={<Article />} />
 			</Routes>
 			<Footer />
 		</>
