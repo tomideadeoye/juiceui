@@ -1,5 +1,5 @@
 
-  # Juice UI by Tomide Adeoye
+  # Juice UI
 
 Everything you need for reliable global payments
 
