@@ -39,6 +39,15 @@ const useStyles = makeStyles((theme) => ({
 			cursor: "pointer",
 			fontSize: 16,
 			margin: theme.spacing(0, 1),
+			[theme.breakpoints.down("md")]: {
+				margin: "10px",
+			},
+		},
+	},
+
+	navItem: {
+		[theme.breakpoints.down("md")]: {
+			fontSize: 12,
 		},
 	},
 }));
@@ -102,16 +111,29 @@ export default function Header() {
 								textDecoration: "none",
 								color: "black",
 							}}
+							className={styles.navItem}
 						>
 							Documentation
 						</Box>
-						<Box component="a" onClick={onBenefitsText1Click}>
+						<Box
+							component="a"
+							onClick={onBenefitsText1Click}
+							className={styles.navItem}
+						>
 							Benefits
 						</Box>
-						<Box component="a" onClick={onUseCasesTextClick}>
+						<Box
+							component="a"
+							onClick={onUseCasesTextClick}
+							className={styles.navItem}
+						>
 							Use cases
 						</Box>
-						<Box component="a" onClick={onGuidanceTextClick}>
+						<Box
+							component="a"
+							onClick={onGuidanceTextClick}
+							className={styles.navItem}
+						>
 							Guidance
 						</Box>
 					</Stack>
