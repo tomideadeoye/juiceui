@@ -1,4 +1,4 @@
-import { Box, Chip, Stack, TextField, Typography } from "@mui/material";
+import { Box, Chip, Grid, Stack, TextField, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -41,6 +41,15 @@ const articles = [
 	{ id: 3, title: "Binance Smart Chain: A New Frontier for DeFi" },
 ];
 
+const verticals = [
+	"Payments",
+	"Fintech",
+	"Africa",
+	"Blockchain",
+	"Cryptocurrency",
+	"DeFi",
+];
+
 const Articles = () => {
 	const styles = useStyles();
 	const navigate = useNavigate();
@@ -60,36 +69,24 @@ const Articles = () => {
 				Making a general inquiry, or you’ll like us to talk in detail? Tell us
 				what you need and we will get back to you as soon as possible.
 			</Typography>
-			<Stack direction="row" spacing={3}>
-				<Chip
-					label="Payments"
-					color="primary"
-					sx={{
-						backgroundColor: "#7c74e9",
-					}}
-				/>
-				<Chip
-					label="Fintech"
-					color="primary"
-					sx={{
-						backgroundColor: "#7c74e9",
-					}}
-				/>
-				<Chip
-					label="Africa"
-					color="primary"
-					sx={{
-						backgroundColor: "#7c74e9",
-					}}
-				/>
-				<Chip
-					label="Stable Coins"
-					color="primary"
-					sx={{
-						backgroundColor: "#7c74e9",
-					}}
-				/>
-			</Stack>
+
+			<Grid container spacing={2} justifyContent="center" alignItems="center">
+				{verticals.map((item) => {
+					return (
+						<Grid key={item} item xs={6} sm={4} md={2}>
+							<Stack alignItems="center">
+								<Chip
+									label={item}
+									color="primary"
+									sx={{
+										backgroundColor: "#7c74e9",
+									}}
+								/>
+							</Stack>
+						</Grid>
+					);
+				})}
+			</Grid>
 
 			<TextField
 				id="standard-basic"
